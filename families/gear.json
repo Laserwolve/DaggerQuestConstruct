@@ -1,0 +1,29 @@
+{
+	"name": "gear",
+	"plugin-id": "Sprite",
+	"sid": 880760584890306,
+	"instanceVariables": [
+		{
+			"name": "type",
+			"type": "string",
+			"desc": "the type of the gear",
+			"show": true,
+			"sid": 606087684120229
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"chevalier_maraudersBracers_gear",
+		"chevalier_maraudersStraps_gear",
+		"chevalier_simpleLeggings_gear",
+		"chevalier_simpleShield_gear",
+		"chevalier_simpleRobe_gear",
+		"chevalier_legsDefault_gear",
+		"chevalier_headDefault_gear",
+		"chevalier_chestDefault_gear",
+		"chevalier_simpleSword_gear",
+		"chevalier_simpleGloves_gear",
+		"chevalier_simpleBoots_gear"
+	]
+}

@@ -1,0 +1,12 @@
+{
+	"name": "hands",
+	"plugin-id": "Sprite",
+	"sid": 997002207913614,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"chevalier_maraudersBracers_gear",
+		"chevalier_simpleGloves_gear"
+	]
+}

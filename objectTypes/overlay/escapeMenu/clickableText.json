@@ -1,0 +1,18 @@
+{
+	"name": "clickableText",
+	"plugin-id": "Text",
+	"sid": 500037054244211,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [
+		{
+			"effectId": "glowhorizontal",
+			"name": "GlowHorizontal"
+		},
+		{
+			"effectId": "glowvertical",
+			"name": "GlowVertical"
+		}
+	]
+}

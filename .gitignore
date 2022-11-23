@@ -1,0 +1,5 @@
+*.uistate.json
+auxiliaryFiles/scripts/engine0
+auxiliaryFiles/scripts/engine1
+imagesStaging
+shadow

@@ -1,0 +1,13 @@
+{
+	"name": "chest",
+	"plugin-id": "Sprite",
+	"sid": 472913673563033,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"chevalier_maraudersStraps_gear",
+		"chevalier_simpleRobe_gear",
+		"chevalier_chestDefault_gear"
+	]
+}

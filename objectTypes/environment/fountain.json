@@ -1,0 +1,56 @@
+{
+	"name": "fountain",
+	"plugin-id": "Sprite",
+	"sid": 726468234220262,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 368,
+						"height": 408,
+						"originX": 0.5,
+						"originY": 0.5955882352941176,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8148597,
+						"collisionPoly": {
+							"points": [
+								0,
+								0.7843136319927139,
+								0.4891303518544074,
+								0.5343137067906993,
+								1,
+								0.7671570497400625,
+								0.4755434782608697,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Image Point 1",
+								"x": 0.970108695652174,
+								"y": 0.7769607843137255
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 138638090162174,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 10
+			}
+		],
+		"subfolders": []
+	}
+}

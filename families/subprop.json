@@ -1,0 +1,11 @@
+{
+	"name": "subProp",
+	"plugin-id": "Sprite",
+	"sid": 198895593893026,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"animals"
+	]
+}

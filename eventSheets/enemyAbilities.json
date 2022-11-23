@@ -1,0 +1,96 @@
+{
+	"name": "enemyAbilities",
+	"events": [
+		{
+			"functionName": "gobloidUnderling",
+			"functionDescription": "",
+			"functionCategory": "enemies",
+			"functionReturnType": "none",
+			"functionCopyPicked": true,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [
+				{
+					"id": "pick-children",
+					"objectClass": "enemy",
+					"sid": 665514371171288,
+					"parameters": {
+						"child": "enemyBody",
+						"which": "own"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "enemy",
+					"sid": 389824856337770,
+					"parameters": {
+						"instance-variable": "attacking",
+						"value": "true"
+					}
+				},
+				{
+					"id": "stop",
+					"objectClass": "enemy",
+					"sid": 657369046948819,
+					"behaviorType": "MoveTo"
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "enemyBody",
+					"sid": 107439509889864,
+					"parameters": {
+						"animation": "\"attack\" & enemy.degrees",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 333717360012879,
+					"parameters": {
+						"seconds": "60 / enemyBody.AnimationSpeed *  4 / 60"
+					}
+				},
+				{
+					"type": "comment",
+					"text": "make a projectile HERE"
+				}
+			],
+			"sid": 293689588111882,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "\"pick last created projectile\""
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 111621646210729,
+							"parameters": {
+								"seconds": "enemyBody.AnimationFrameCount / enemyBody.AnimationSpeed - 60 / enemyBody.AnimationSpeed *  4 / 60"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "enemy",
+							"sid": 893246998192657,
+							"parameters": {
+								"instance-variable": "attacking",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 993405318556598
+				}
+			]
+		}
+	],
+	"sid": 470409073321918
+}

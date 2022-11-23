@@ -1,0 +1,11 @@
+{
+	"name": "head",
+	"plugin-id": "Sprite",
+	"sid": 527486841848922,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"chevalier_headDefault_gear"
+	]
+}

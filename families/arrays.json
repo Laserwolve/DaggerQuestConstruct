@@ -1,0 +1,16 @@
+{
+	"name": "arrays",
+	"plugin-id": "Arr",
+	"sid": 576037400939442,
+	"instanceVariables": [],
+	"members": [
+		"simpleArmorMods",
+		"simple1hWeaponMods",
+		"simpleShieldMods",
+		"maraudersMods",
+		"simple2hWeaponMods",
+		"enemies",
+		"equipment",
+		"abilities"
+	]
+}

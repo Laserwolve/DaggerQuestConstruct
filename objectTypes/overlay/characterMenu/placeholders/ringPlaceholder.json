@@ -1,0 +1,57 @@
+{
+	"name": "ringPlaceholder",
+	"plugin-id": "Sprite",
+	"sid": 406938265523675,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 65,
+						"height": 65,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1833814,
+						"collisionPoly": {
+							"points": [
+								0.25,
+								0.25,
+								0.5,
+								0.19230769230769232,
+								0.7692307692307693,
+								0.22115384615384615,
+								0.9326923076923077,
+								0.5,
+								0.8173076923076923,
+								0.8173076923076923,
+								0.5,
+								0.9038461538461539,
+								0.19230769230769232,
+								0.7980769230769231,
+								0.028846153846153848,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 309183714358422,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 10
+			}
+		],
+		"subfolders": []
+	}
+}

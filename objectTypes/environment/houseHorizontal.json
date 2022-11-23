@@ -1,0 +1,56 @@
+{
+	"name": "houseHorizontal",
+	"plugin-id": "Sprite",
+	"sid": 201116755388751,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 1667,
+						"height": 936,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3304780,
+						"collisionPoly": {
+							"points": [
+								0.052789368884035695,
+								0.3119657793615617,
+								0.9472102649782543,
+								0.32905986166407897,
+								0.9496099315293189,
+								1,
+								0.05278955195289067,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Image Point 1",
+								"x": 0.9184163167366527,
+								"y": 0.9978632478632479
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 786488333898304,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 10
+			}
+		],
+		"subfolders": []
+	}
+}

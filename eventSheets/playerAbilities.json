@@ -1,0 +1,263 @@
+{
+	"name": "playerAbilities",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Chevalier Special A",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "heroicStrike",
+					"functionDescription": "",
+					"functionCategory": "abilities",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [
+						{
+							"id": "pick-by-comparison",
+							"objectClass": "System",
+							"sid": 662576310039080,
+							"parameters": {
+								"object": "gear",
+								"expression": "gear.type",
+								"comparison": 0,
+								"value": "\"mainHand\""
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "player",
+							"sid": 790821150948717,
+							"parameters": {
+								"instance-variable": "currentMana",
+								"comparison": 5,
+								"value": "50"
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "must have a weapon equipped and enough mana"
+						},
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "player",
+							"sid": 254627907855060,
+							"parameters": {
+								"instance-variable": "currentMana",
+								"value": "50"
+							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "player",
+							"sid": 871605903919507,
+							"behaviorType": "MoveTo"
+						},
+						{
+							"callFunction": "updateFacing",
+							"sid": 638584068567689,
+							"parameters": [
+								true
+							]
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 660866454966545,
+							"parameters": {
+								"group-name": "\"movement\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 705853485082503,
+							"parameters": {
+								"group-name": "\"Chevalier Special A\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 220552945580142,
+							"parameters": {
+								"group-name": "\"facings\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "body",
+							"sid": 130470178777338,
+							"parameters": {
+								"animation": "\"specialA\" & player.degrees",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation-speed",
+							"objectClass": "body",
+							"sid": 654867442204607,
+							"parameters": {
+								"speed": "14"
+							}
+						},
+						{
+							"type": "comment",
+							"text": "the 4 here is the 0-based frame to fire the projectile on"
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 293044619887902,
+							"parameters": {
+								"seconds": "60 / body.AnimationSpeed *  4 / 60"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 719275939252091,
+							"parameters": {
+								"object-to-create": "projectile",
+								"layer": "\"mechanics\"",
+								"x": "player.X",
+								"y": "player.Y",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						}
+					],
+					"sid": 841411832165176,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-last-created",
+									"objectClass": "System",
+									"sid": 633685487957108,
+									"parameters": {
+										"object": "projectile"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "projectile",
+									"sid": 568384661089724,
+									"parameters": {
+										"instance-variable": "friendly",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "projectile",
+									"sid": 252908963201050,
+									"parameters": {
+										"instance-variable": "piercing",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "projectile",
+									"sid": 281730600296002,
+									"parameters": {
+										"instance-variable": "range",
+										"value": "150"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "projectile",
+									"sid": 925673307821359,
+									"parameters": {
+										"instance-variable": "slashDamage",
+										"value": "player.slashDamage"
+									}
+								},
+								{
+									"id": "set-size",
+									"objectClass": "projectile",
+									"sid": 163496242930037,
+									"parameters": {
+										"width": "128",
+										"height": "128"
+									}
+								},
+								{
+									"id": "set-speed",
+									"objectClass": "projectile",
+									"sid": 214458391511165,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"speed": "700"
+									}
+								},
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "projectile",
+									"sid": 377290828627706,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "player.MoveTo.MovingAngle"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 177943324501810,
+									"parameters": {
+										"seconds": "body.AnimationFrameCount / body.AnimationSpeed - 60 / body.AnimationSpeed *  4 / 60"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 236359856190115,
+									"parameters": {
+										"group-name": "\"movement\"",
+										"state": "activated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 661895063501191,
+									"parameters": {
+										"group-name": "\"facings\"",
+										"state": "activated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 194561041860084,
+									"parameters": {
+										"group-name": "\"Chevalier Special A\"",
+										"state": "activated"
+									}
+								}
+							],
+							"sid": 454407088692875
+						}
+					]
+				}
+			],
+			"sid": 280662375042646
+		}
+	],
+	"sid": 667243195050435
+}

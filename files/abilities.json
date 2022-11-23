@@ -1,0 +1,155 @@
+{
+    "c2array": true,
+    "size": [
+        5,
+        9,
+        1
+    ],
+    "data": [
+        [
+            [
+                "locationData"
+            ],
+            [
+                "chevalier_specialA_1"
+            ],
+            [
+                "chevalier_specialA_2"
+            ],
+            [
+                "chevalier_specialA_3"
+            ],
+            [
+                "chevalier_specialC_1"
+            ],
+            [
+                "chevalier_specialC_2"
+            ],
+            [
+                "chevalier_specialC_3"
+            ],
+            [
+                "chevalier_specialB_1"
+            ],
+            [
+                "chevalier_specialD_1"
+            ]
+        ],
+        [
+            [
+                "simpleName"
+            ],
+            [
+                "heroicStrike"
+            ],
+            [
+                "criticalStrike"
+            ],
+            [
+                "cripplingStrike"
+            ],
+            [
+                "kick"
+            ],
+            [
+                "bootKick"
+            ],
+            [
+                "stunningKick"
+            ],
+            [
+                "groundSlam"
+            ],
+            [
+                "warCry"
+            ]
+        ],
+        [
+            [
+                "fullName"
+            ],
+            [
+                "Heroic Strike"
+            ],
+            [
+                "Critical Strike"
+            ],
+            [
+                "Crippling Strike"
+            ],
+            [
+                "Kick"
+            ],
+            [
+                "Boot Kick"
+            ],
+            [
+                "Stunning Kick"
+            ],
+            [
+                "Ground Slam"
+            ],
+            [
+                "War Cry"
+            ]
+        ],
+        [
+            [
+                "description"
+            ],
+            [
+                "Slice upward with your weapon, dealing {1}% increased damage"
+            ],
+            [
+                "Your Basic Attack has a 10% chance to be replaced by a Critical Strike, dealing {1}% increased Damage"
+            ],
+            [
+                "Cripple an enemy, reducing their movement by {1}% for {2} seconds"
+            ],
+            [
+                "Kick an enemy, dealing # damage"
+            ],
+            [
+                "Kick an enemy, dealing # damage, based on the mods of your footgear"
+            ],
+            [
+                "Kick an enemy, dealing # damage and stunning them for # seconds"
+            ],
+            [
+                "Slam the ground with your weapon, dealing # damage in a nova"
+            ],
+            [
+                "Give a sonorous war cry, increasing your damage by #% for # seconds"
+            ]
+        ],
+        [
+            [
+                "cost"
+            ],
+            [
+                "Mana,10"
+            ],
+            [
+                "none"
+            ],
+            [
+                "Mana,5"
+            ],
+            [
+                "Mana,5"
+            ],
+            [
+                "Mana,5"
+            ],
+            [
+                "Mana,5"
+            ],
+            [
+                "Mana,5"
+            ],
+            [
+                "Mana,5"
+            ]
+        ]
+    ]
+}

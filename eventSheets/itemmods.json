@@ -1,0 +1,665 @@
+{
+	"name": "itemMods",
+	"events": [
+		{
+			"functionName": "manageMods",
+			"functionDescription": "activate or deactivate the mods of an item to the player",
+			"functionCategory": "mods",
+			"functionReturnType": "none",
+			"functionCopyPicked": true,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "status",
+					"type": "string",
+					"initialValue": "activate",
+					"comment": "whether or not to activate or deactivate the mods",
+					"sid": 752411012391439
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 603877761931705,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "mod",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 553329817892317
+				},
+				{
+					"eventType": "variable",
+					"name": "modName",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 852267768214015
+				},
+				{
+					"eventType": "variable",
+					"name": "value",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 514042472848311
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 950821697148028,
+							"parameters": {
+								"name": "\"\"",
+								"start-index": "0",
+								"end-index": "tokencount(item.mods, newline) - 2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 359844499722205,
+							"parameters": {
+								"variable": "mod",
+								"value": "tokenat(item.mods, loopindex, newline)"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 692289020613802,
+							"parameters": {
+								"variable": "modName",
+								"value": "tokenat(mod, 0, \",\")"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 864775740205802,
+							"parameters": {
+								"variable": "value",
+								"value": "tokenat(mod, 1, \",\")"
+							}
+						},
+						{
+							"callFunction": "modCaller",
+							"sid": 320115987355731,
+							"parameters": [
+								"modName",
+								"status",
+								"value"
+							]
+						}
+					],
+					"sid": 931087477063415
+				}
+			]
+		},
+		{
+			"functionName": "modCaller",
+			"functionDescription": "the intermediary mod calling function, so we can pass parameters",
+			"functionCategory": "mods",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "modName",
+					"type": "string",
+					"initialValue": "",
+					"comment": "the name of the mod",
+					"sid": 788766979964675
+				},
+				{
+					"name": "status",
+					"type": "string",
+					"initialValue": "activate",
+					"comment": "whether or not to activate or deactivate the mods",
+					"sid": 998216121522838
+				},
+				{
+					"name": "value",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "the value of the mod",
+					"sid": 691304125398954
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "we have to use an in-between function if we want to both call a function via string, and pass parameters to it"
+				},
+				{
+					"id": "call-mapped-function",
+					"objectClass": "Functions",
+					"sid": 442669153466373,
+					"parameters": {
+						"name": "\"equipmentMods\"",
+						"string": "modName",
+						"forward-params": "1"
+					}
+				}
+			],
+			"sid": 993001901337531
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "modFunctions",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "flatHealth",
+					"functionDescription": "",
+					"functionCategory": "mods",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "status",
+							"type": "string",
+							"initialValue": "activate",
+							"comment": "whether or not to activate or deactivate the mods",
+							"sid": 907071703739463
+						},
+						{
+							"name": "value",
+							"type": "string",
+							"initialValue": "",
+							"comment": "the first value in a mod, if any. can be a string or number",
+							"sid": 307511183096554
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 977147888428121,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 528784505089645,
+									"parameters": {
+										"variable": "status",
+										"comparison": 0,
+										"value": "\"activate\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-instvar",
+									"objectClass": "player",
+									"sid": 146401229689509,
+									"parameters": {
+										"instance-variable": "maxHealth",
+										"value": "float(value)"
+									}
+								},
+								{
+									"id": "add-to-instvar",
+									"objectClass": "player",
+									"sid": 624028280635224,
+									"parameters": {
+										"instance-variable": "currentHealth",
+										"value": "float(value)"
+									}
+								}
+							],
+							"sid": 490066346797754
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 232030883085640
+								}
+							],
+							"actions": [
+								{
+									"id": "subtract-from-instvar",
+									"objectClass": "player",
+									"sid": 501986336407029,
+									"parameters": {
+										"instance-variable": "currentHealth",
+										"value": "float(value)"
+									}
+								},
+								{
+									"id": "subtract-from-instvar",
+									"objectClass": "player",
+									"sid": 693678043091823,
+									"parameters": {
+										"instance-variable": "maxHealth",
+										"value": "float(value)"
+									}
+								}
+							],
+							"sid": 666732549960634
+						}
+					]
+				},
+				{
+					"functionName": "flatSlash",
+					"functionDescription": "",
+					"functionCategory": "mods",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "status",
+							"type": "string",
+							"initialValue": "activate",
+							"comment": "whether or not to activate or deactivate the mods",
+							"sid": 269368551518991
+						},
+						{
+							"name": "value",
+							"type": "string",
+							"initialValue": "",
+							"comment": "the first value in a mod, if any. can be a string or number",
+							"sid": 170901516439183
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 109462873705798,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 568213816794355,
+									"parameters": {
+										"variable": "status",
+										"comparison": 0,
+										"value": "\"activate\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-instvar",
+									"objectClass": "player",
+									"sid": 262047548645544,
+									"parameters": {
+										"instance-variable": "slashDamage",
+										"value": "float(value)"
+									}
+								}
+							],
+							"sid": 666058157617019
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 645788108894855
+								}
+							],
+							"actions": [
+								{
+									"id": "subtract-from-instvar",
+									"objectClass": "player",
+									"sid": 669198401148039,
+									"parameters": {
+										"instance-variable": "slashDamage",
+										"value": "float(value)"
+									}
+								}
+							],
+							"sid": 417285695602505
+						}
+					]
+				},
+				{
+					"functionName": "flatStab",
+					"functionDescription": "",
+					"functionCategory": "mods",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "status",
+							"type": "string",
+							"initialValue": "activate",
+							"comment": "whether or not to activate or deactivate the mods",
+							"sid": 233183958933924
+						},
+						{
+							"name": "value",
+							"type": "string",
+							"initialValue": "",
+							"comment": "the first value in a mod, if any. can be a string or number",
+							"sid": 259756248552972
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 716499301217349,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 250522026566850,
+									"parameters": {
+										"variable": "status",
+										"comparison": 0,
+										"value": "\"activate\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-instvar",
+									"objectClass": "player",
+									"sid": 543043956982505,
+									"parameters": {
+										"instance-variable": "stabDamage",
+										"value": "float(value)"
+									}
+								}
+							],
+							"sid": 134744942562035
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 560208581452926
+								}
+							],
+							"actions": [
+								{
+									"id": "subtract-from-instvar",
+									"objectClass": "player",
+									"sid": 481691418005772,
+									"parameters": {
+										"instance-variable": "stabDamage",
+										"value": "float(value)"
+									}
+								}
+							],
+							"sid": 937774974275964
+						}
+					]
+				},
+				{
+					"functionName": "flatSmash",
+					"functionDescription": "",
+					"functionCategory": "mods",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "status",
+							"type": "string",
+							"initialValue": "activate",
+							"comment": "whether or not to activate or deactivate the mods",
+							"sid": 706553249865660
+						},
+						{
+							"name": "value",
+							"type": "string",
+							"initialValue": "",
+							"comment": "the first value in a mod, if any. can be a string or number",
+							"sid": 604458424984432
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 839678793233949,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 117309649456672,
+									"parameters": {
+										"variable": "status",
+										"comparison": 0,
+										"value": "\"activate\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-instvar",
+									"objectClass": "player",
+									"sid": 500155913149443,
+									"parameters": {
+										"instance-variable": "smashDamage",
+										"value": "float(value)"
+									}
+								}
+							],
+							"sid": 841139628008084
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 239357377286435
+								}
+							],
+							"actions": [
+								{
+									"id": "subtract-from-instvar",
+									"objectClass": "player",
+									"sid": 520890141709011,
+									"parameters": {
+										"instance-variable": "smashDamage",
+										"value": "float(value)"
+									}
+								}
+							],
+							"sid": 188636927844317
+						}
+					]
+				},
+				{
+					"functionName": "flatBlockChance",
+					"functionDescription": "",
+					"functionCategory": "mods",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "status",
+							"type": "string",
+							"initialValue": "activate",
+							"comment": "whether or not to activate or deactivate the mods",
+							"sid": 354495456313852
+						},
+						{
+							"name": "value",
+							"type": "string",
+							"initialValue": "",
+							"comment": "the first value in a mod, if any. can be a string or number",
+							"sid": 718853392940209
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 299221305248970,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 190383284288692,
+									"parameters": {
+										"variable": "status",
+										"comparison": 0,
+										"value": "\"activate\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-instvar",
+									"objectClass": "player",
+									"sid": 794190025835576,
+									"parameters": {
+										"instance-variable": "blockChance",
+										"value": "float(value)"
+									}
+								}
+							],
+							"sid": 655805588442814
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 311814479031107
+								}
+							],
+							"actions": [
+								{
+									"id": "subtract-from-instvar",
+									"objectClass": "player",
+									"sid": 161525946595449,
+									"parameters": {
+										"instance-variable": "blockChance",
+										"value": "float(value)"
+									}
+								}
+							],
+							"sid": 661001107182607
+						}
+					]
+				},
+				{
+					"functionName": "flatManaRegen",
+					"functionDescription": "",
+					"functionCategory": "mods",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "status",
+							"type": "string",
+							"initialValue": "activate",
+							"comment": "whether or not to activate or deactivate the mods",
+							"sid": 795538883624913
+						},
+						{
+							"name": "value",
+							"type": "string",
+							"initialValue": "",
+							"comment": "the first value in a mod, if any. can be a string or number",
+							"sid": 685268761199562
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 461920738258948,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 304759151890184,
+									"parameters": {
+										"variable": "status",
+										"comparison": 0,
+										"value": "\"activate\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-instvar",
+									"objectClass": "player",
+									"sid": 559308463187600,
+									"parameters": {
+										"instance-variable": "manaRegen",
+										"value": "float(value)"
+									}
+								}
+							],
+							"sid": 299839860810209
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 373413685316452
+								}
+							],
+							"actions": [
+								{
+									"id": "subtract-from-instvar",
+									"objectClass": "player",
+									"sid": 855691501592699,
+									"parameters": {
+										"instance-variable": "manaRegen",
+										"value": "float(value)"
+									}
+								}
+							],
+							"sid": 858806715415501
+						}
+					]
+				}
+			],
+			"sid": 124435217528903
+		}
+	],
+	"sid": 907274487386608
+}

@@ -1,0 +1,12 @@
+{
+	"name": "legs",
+	"plugin-id": "Sprite",
+	"sid": 315606417148969,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"chevalier_legsDefault_gear",
+		"chevalier_simpleLeggings_gear"
+	]
+}

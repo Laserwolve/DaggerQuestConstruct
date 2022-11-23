@@ -1,0 +1,78 @@
+{
+	"name": "slot",
+	"plugin-id": "Sprite",
+	"sid": 563349747150366,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "identifier",
+			"type": "number",
+			"desc": "the unique identifier of the equipment in this slot",
+			"show": true,
+			"sid": 288550989807342
+		},
+		{
+			"name": "type",
+			"type": "string",
+			"desc": "the types that can go into this slot",
+			"show": true,
+			"sid": 485668483322681
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Anchor",
+			"name": "Anchor",
+			"sid": 239542143865777
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 78,
+						"height": 78,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7663636,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								0.5,
+								0,
+								0.9921875,
+								0,
+								0.9921875,
+								0.5,
+								0.9921875,
+								0.9921875,
+								0.5,
+								0.9921875,
+								0,
+								0.9921875,
+								0,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 768915194887231,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 10
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -1,0 +1,68 @@
+{
+	"name": "house",
+	"plugin-id": "Sprite",
+	"sid": 156491309782668,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 2668,
+						"height": 1916,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7483082,
+						"collisionPoly": {
+							"points": [
+								0.07646174623869706,
+								0.8977036286993162,
+								0.022488721307071025,
+								0.7901877799462179,
+								0.09445275073644828,
+								0.4237996063550975,
+								0.5067466610017746,
+								0.09394576405184768,
+								0.9017992548678057,
+								0.43215033505306394,
+								0.9700149925037485,
+								0.8037577969545119,
+								0.6994002998500749,
+								1,
+								0.5637181409295352,
+								0.9144048830163759,
+								0.42278851419017033,
+								1,
+								0.30734632683658164,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Image Point 1",
+								"x": 0.041979010494752625,
+								"y": 0.7943632567849687
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 425008525789762,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 10
+			}
+		],
+		"subfolders": []
+	}
+}

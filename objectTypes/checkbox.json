@@ -1,0 +1,97 @@
+{
+	"name": "checkbox",
+	"plugin-id": "Sprite",
+	"sid": 603914885668262,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "checked",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 336292248563878
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [
+		{
+			"effectId": "glowhorizontal",
+			"name": "GlowHorizontal"
+		},
+		{
+			"effectId": "glowvertical",
+			"name": "GlowVertical"
+		}
+	],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6818854,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 271600070958920,
+				"name": "unchecked",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 10
+			},
+			{
+				"frames": [
+					{
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 979362,
+						"collisionPoly": {
+							"points": [
+								0.140625,
+								0.140625,
+								0.5,
+								0,
+								0.84375,
+								0.140625,
+								0.984375,
+								0.5,
+								0.84375,
+								0.84375,
+								0.5,
+								0.984375,
+								0.140625,
+								0.84375,
+								0,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 472008639218651,
+				"name": "checked",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 10
+			}
+		],
+		"subfolders": []
+	}
+}

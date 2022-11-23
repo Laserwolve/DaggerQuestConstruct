@@ -1,0 +1,25 @@
+{
+	"name": "everything",
+	"plugin-id": "Sprite",
+	"sid": 827672985486420,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"chevalier",
+		"chevalier_chestDefault_gear",
+		"chevalier_simpleSword_gear",
+		"chevalier_headDefault_gear",
+		"chevalier_legsDefault_gear",
+		"chevalier_maraudersBracers_gear",
+		"chevalier_maraudersStraps_gear",
+		"chevalier_simpleBoots_gear",
+		"chevalier_simpleGloves_gear",
+		"chevalier_simpleLeggings_gear",
+		"chevalier_simpleRobe_gear",
+		"chevalier_simpleShield_gear",
+		"gobloidUnderling",
+		"gobloidWarlock",
+		"gobloidHardshot"
+	]
+}

@@ -1,0 +1,57 @@
+{
+	"name": "healthStatue",
+	"plugin-id": "Sprite",
+	"sid": 632697163826682,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 157,
+						"height": 251,
+						"originX": 0.5485382053448238,
+						"originY": 0.5772342865070749,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9970189,
+						"collisionPoly": {
+							"points": [
+								0,
+								0.4101248218007173,
+								0.5028539576365664,
+								0,
+								1,
+								0.3553918024271768,
+								1,
+								0.566113927015308,
+								1,
+								0.6865265696370971,
+								0.5028539576365664,
+								1,
+								0,
+								0.9547183645674461,
+								0,
+								0.566113927015308
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 786105491664080,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 10
+			}
+		],
+		"subfolders": []
+	}
+}

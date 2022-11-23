@@ -1,0 +1,11 @@
+{
+	"name": "mainHand",
+	"plugin-id": "Sprite",
+	"sid": 883730707317179,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"chevalier_simpleSword_gear"
+	]
+}

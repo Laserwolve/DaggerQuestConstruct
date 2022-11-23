@@ -1,0 +1,11 @@
+{
+	"name": "offHand",
+	"plugin-id": "Sprite",
+	"sid": 665114764779590,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"chevalier_simpleShield_gear"
+	]
+}

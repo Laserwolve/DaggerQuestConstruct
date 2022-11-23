@@ -1,0 +1,17 @@
+{
+	"name": "invalidLocation",
+	"plugin-id": "Sprite",
+	"sid": 896330194441543,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"manaCover",
+		"healthCover",
+		"skillBarBackground",
+		"escapeMenu",
+		"settingsMenu",
+		"slot",
+		"skillSlot"
+	]
+}

@@ -1,0 +1,63 @@
+{
+	"name": "characterStatue",
+	"plugin-id": "Sprite",
+	"sid": 463143573366354,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Anchor",
+			"name": "Anchor",
+			"sid": 932098185175292
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 102,
+						"height": 389,
+						"originX": 0.5,
+						"originY": 0.5284461570561233,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8358772,
+						"collisionPoly": {
+							"points": [
+								0,
+								0.4392825464936182,
+								0.5,
+								0.003176598068842421,
+								1,
+								0.45135468347423485,
+								1,
+								0.5207694711127806,
+								1,
+								0.5901842587513262,
+								0.5,
+								1,
+								0,
+								0.6082924642222511,
+								0,
+								0.5207694711127806
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 900264495342666,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 10
+			}
+		],
+		"subfolders": []
+	}
+}

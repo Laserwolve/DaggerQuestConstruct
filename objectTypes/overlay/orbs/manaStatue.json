@@ -1,0 +1,57 @@
+{
+	"name": "manaStatue",
+	"plugin-id": "Sprite",
+	"sid": 378916519712625,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 168,
+						"height": 254,
+						"originX": 0.3823358111752935,
+						"originY": 0.5413090367550563,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3666876,
+						"collisionPoly": {
+							"points": [
+								0,
+								0.30904634992664237,
+								0.4422808434259862,
+								0,
+								1,
+								0.3422601676836991,
+								1,
+								0.5313234379930991,
+								0.9148943463920576,
+								0.6207452550313288,
+								0.4422808434259862,
+								1,
+								0,
+								0.6130805278566233,
+								0,
+								0.5313234379930991
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 361113780376478,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 10
+			}
+		],
+		"subfolders": []
+	}
+}

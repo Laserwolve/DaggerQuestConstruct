@@ -1,0 +1,63 @@
+{
+	"name": "manaCover",
+	"plugin-id": "Sprite",
+	"sid": 699021658385342,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Anchor",
+			"name": "Anchor",
+			"sid": 771402979703341
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 248,
+						"height": 248,
+						"originX": 1,
+						"originY": 1,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2708205,
+						"collisionPoly": {
+							"points": [
+								0.1142842273527742,
+								0.1016904587914605,
+								0.5,
+								0,
+								0.8812822580190969,
+								0.1016904587914605,
+								1,
+								0.5,
+								0.8812822580190969,
+								0.8937312706199356,
+								0.5,
+								1,
+								0.1142842273527742,
+								0.8937312706199356,
+								0,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 458871456294297,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 10
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -1,0 +1,145 @@
+{
+	"name": "virginWidow",
+	"plugin-id": "Sprite",
+	"sid": 743350583915361,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 97,
+						"height": 262,
+						"originX": 0.5773195876288659,
+						"originY": 0.9083969465648855,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5909663,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 97,
+						"height": 261,
+						"originX": 0.5773195876288659,
+						"originY": 0.9118773946360154,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9095506,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 97,
+						"height": 262,
+						"originX": 0.5773195876288659,
+						"originY": 0.9122137404580153,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5097944,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 97,
+						"height": 259,
+						"originX": 0.5773195876288659,
+						"originY": 0.9111969111969112,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4309634,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 97,
+						"height": 262,
+						"originX": 0.5773195876288659,
+						"originY": 0.9083969465648855,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6081222,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 97,
+						"height": 262,
+						"originX": 0.5773195876288659,
+						"originY": 0.9122137404580153,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7746433,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 98,
+						"height": 260,
+						"originX": 0.5816326530612245,
+						"originY": 0.9115384615384615,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8863728,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 98,
+						"height": 264,
+						"originX": 0.5816326530612245,
+						"originY": 0.9053030303030303,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3743539,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 98,
+						"height": 265,
+						"originX": 0.5816326530612245,
+						"originY": 0.9056603773584906,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7568686,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 98,
+						"height": 263,
+						"originX": 0.5816326530612245,
+						"originY": 0.908745247148289,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8941138,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 957095610019533,
+				"name": "idle90",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 4
+			}
+		],
+		"subfolders": []
+	}
+}

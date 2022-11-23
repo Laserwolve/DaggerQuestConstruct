@@ -1,0 +1,98 @@
+{
+	"name": "firepit",
+	"plugin-id": "Sprite",
+	"sid": 816206231227239,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 274,
+						"height": 349,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4475272,
+						"collisionPoly": {
+							"points": [
+								0,
+								0.4527220411765202,
+								0.3029194852731526,
+								0.3180515322097736,
+								0.7226277929152888,
+								0.32808022922636076,
+								0.974452666122548,
+								0.44340972025961445,
+								0.9927008413050297,
+								0.9455586955335561,
+								0.39051111597214283,
+								1,
+								0,
+								0.7693410179334926
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Image Point 1",
+								"x": 0.9452554744525548,
+								"y": 0.9369627507163324
+							}
+						],
+						"duration": 1
+					},
+					{
+						"width": 274,
+						"height": 349,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1258201,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 274,
+						"height": 349,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1592303,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 274,
+						"height": 349,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8329209,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 415265203491621,
+				"name": "Default",
+				"isLooping": true,
+				"isPingPong": true,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 6
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -1,0 +1,64 @@
+{
+	"name": "deadKing",
+	"plugin-id": "Sprite",
+	"sid": 497593004602545,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 246,
+						"height": 250,
+						"originX": 0.516260162601626,
+						"originY": 0.484,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2054817,
+						"collisionPoly": {
+							"points": [
+								0.3617886178861789,
+								0.332,
+								0.516260162601626,
+								0.164,
+								0.8455284552845529,
+								0.156,
+								0.7317073170731707,
+								0.484,
+								0.9634146341463414,
+								0.924,
+								0.516260162601626,
+								0.784,
+								0.16666666666666666,
+								0.824,
+								0.23983739837398374,
+								0.484
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Image Point 1",
+								"x": 0.33623203320640804,
+								"y": 1.491616
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 455411630591631,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 10
+			}
+		],
+		"subfolders": []
+	}
+}

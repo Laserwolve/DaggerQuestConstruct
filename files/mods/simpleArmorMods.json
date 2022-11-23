@@ -1,0 +1,125 @@
+{
+    "c2array": true,
+    "size": [
+        5,
+        7,
+        1
+    ],
+    "data": [
+        [
+            [
+                "simpleName"
+            ],
+            [
+                "flatHealth"
+            ],
+            [
+                "flatBlockChance"
+            ],
+            [
+                "flatSlash"
+            ],
+            [
+                "flatStab"
+            ],
+            [
+                "flatSmash"
+            ],
+            [
+                "flatManaRegen"
+            ]
+        ],
+        [
+            [
+                "description"
+            ],
+            [
+                "+# Health"
+            ],
+            [
+                "+#% Block Chance"
+            ],
+            [
+                "+# Slash Damage"
+            ],
+            [
+                "+# Stab Damage"
+            ],
+            [
+                "+# Smash Damage"
+            ],
+            [
+                "+# Mana Regeneration"
+            ]
+        ],
+        [
+            [
+                "lowerBound"
+            ],
+            [
+                2
+            ],
+            [
+                2
+            ],
+            [
+                2
+            ],
+            [
+                2
+            ],
+            [
+                2
+            ],
+            [
+                2
+            ]
+        ],
+        [
+            [
+                "upperBound"
+            ],
+            [
+                6
+            ],
+            [
+                6
+            ],
+            [
+                6
+            ],
+            [
+                6
+            ],
+            [
+                6
+            ],
+            [
+                6
+            ]
+        ],
+        [
+            [
+                "rarity"
+            ],
+            [
+                1000
+            ],
+            [
+                1000
+            ],
+            [
+                1000
+            ],
+            [
+                1000
+            ],
+            [
+                1000
+            ],
+            [
+                1000
+            ]
+        ]
+    ]
+}

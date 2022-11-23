@@ -1,0 +1,242 @@
+{
+    "c2array": true,
+    "size": [
+        8,
+        9,
+        1
+    ],
+    "data": [
+        [
+            [
+                "simpleName"
+            ],
+            [
+                "simpleRobe"
+            ],
+            [
+                "simpleLeggings"
+            ],
+            [
+                "simpleSword"
+            ],
+            [
+                "simpleShield"
+            ],
+            [
+                "simpleGloves"
+            ],
+            [
+                "simpleBoots"
+            ],
+            [
+                "maraudersStraps"
+            ],
+            [
+                "maraudersBracers"
+            ]
+        ],
+        [
+            [
+                "fullName"
+            ],
+            [
+                "Simple Robe"
+            ],
+            [
+                "Simple Leggings"
+            ],
+            [
+                "Simple Sword"
+            ],
+            [
+                "Simple Shield"
+            ],
+            [
+                "Simple Gloves"
+            ],
+            [
+                "Simple Boots"
+            ],
+            [
+                "Marauder's Straps"
+            ],
+            [
+                "Marauder's Bracers"
+            ]
+        ],
+        [
+            [
+                "type"
+            ],
+            [
+                "chest"
+            ],
+            [
+                "legs"
+            ],
+            [
+                "mainHand"
+            ],
+            [
+                "offHand"
+            ],
+            [
+                "hands"
+            ],
+            [
+                "feet"
+            ],
+            [
+                "chest"
+            ],
+            [
+                "hands"
+            ]
+        ],
+        [
+            [
+                "lore"
+            ],
+            [
+                "Deep in the midst, you conceal him"
+            ],
+            [
+                "Whoso is simple, let him perish!"
+            ],
+            [
+                "The first of many"
+            ],
+            [
+                "No respite for the scorned"
+            ],
+            [
+                "Betwixt your fingers; unbridled hatred"
+            ],
+            [
+                "Wander to and fro"
+            ],
+            [
+                "Deprave the widow"
+            ],
+            [
+                "Obtain that for which thou wrought not"
+            ]
+        ],
+        [
+            [
+                "level"
+            ],
+            [
+                1
+            ],
+            [
+                1
+            ],
+            [
+                1
+            ],
+            [
+                1
+            ],
+            [
+                1
+            ],
+            [
+                1
+            ],
+            [
+                2
+            ],
+            [
+                2
+            ]
+        ],
+        [
+            [
+                "classRestrictions"
+            ],
+            [
+                "All Classes"
+            ],
+            [
+                "All Classes"
+            ],
+            [
+                "Chevalier"
+            ],
+            [
+                "Chevalier"
+            ],
+            [
+                "All Classes"
+            ],
+            [
+                "All Classes"
+            ],
+            [
+                "Chevalier"
+            ],
+            [
+                "Chevalier"
+            ]
+        ],
+        [
+            [
+                "rarity"
+            ],
+            [
+                1000
+            ],
+            [
+                1000
+            ],
+            [
+                1000
+            ],
+            [
+                1000
+            ],
+            [
+                1000
+            ],
+            [
+                1000
+            ],
+            [
+                1000
+            ],
+            [
+                1000
+            ]
+        ],
+        [
+            [
+                "modTable"
+            ],
+            [
+                "simpleArmor"
+            ],
+            [
+                "simpleArmor"
+            ],
+            [
+                "simple1hWeapon"
+            ],
+            [
+                "simpleShield"
+            ],
+            [
+                "simpleArmor"
+            ],
+            [
+                "simpleArmor"
+            ],
+            [
+                "marauders"
+            ],
+            [
+                "marauders"
+            ]
+        ]
+    ]
+}

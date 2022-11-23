@@ -1,0 +1,37 @@
+{
+	"name": "orbBackground",
+	"plugin-id": "Sprite",
+	"sid": 959052415882709,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 210,
+						"height": 210,
+						"originX": 0.5,
+						"originY": 1,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2497555,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 783693173600170,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 10
+			}
+		],
+		"subfolders": []
+	}
+}

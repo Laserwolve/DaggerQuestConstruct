@@ -1,0 +1,53 @@
+{
+	"name": "shedTop",
+	"plugin-id": "Sprite",
+	"sid": 986608881641784,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 957,
+						"height": 537,
+						"originX": 0.5047021943573667,
+						"originY": 0.7411545623836127,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 110096,
+						"collisionPoly": {
+							"points": [
+								0,
+								0.5418997681118699,
+								0.25809816781007155,
+								0.1014898609182688,
+								0.5266456564142915,
+								0.061452535277638345,
+								1,
+								0.5158288909514298,
+								0.7445141225274704,
+								0.5502793367126577,
+								0.4764890122687682,
+								0.9739292080841915
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 301173152970000,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 10
+			}
+		],
+		"subfolders": []
+	}
+}
