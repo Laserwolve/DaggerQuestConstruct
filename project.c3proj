@@ -734,6 +734,14 @@
 					"file-info": {
 						"purpose": "none"
 					}
+				},
+				{
+					"name": "easystar-0.4.4.js",
+					"type": "text/javascript",
+					"sid": 914862481303739,
+					"file-info": {
+						"purpose": "none"
+					}
 				}
 			],
 			"subfolders": [
