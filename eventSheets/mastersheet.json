@@ -113,7 +113,7 @@
 					"actions": [
 						{
 							"type": "script",
-							"script": "function isoX(x,y) {return x - y};\nfunction isoY(x,y) { return (x + y) / 2};\nconst inst = runtime.objects.Sprite.getFirstInstance()\n// Add path waypoints\nfor (let i=0;i<runtime.globalVars.pathLength;i++) {\n\tconst x = globalThis.path[i].x*32+400\n\tconst y = globalThis.path[i].y*32-150\n\tinst.behaviors.MoveTo.moveToPosition(isoX(x,y), isoY(x,y),false)\n\tconsole.log(isoX(x,y), isoY(x,y))\n}\nconsole.log(globalThis.path)\nfor (let i=0;i<runtime.globalVars.pathLength;i++) {\n\tconsole.log(inst.behaviors.MoveTo.getWaypoint(i))\n}\n\n\n"
+							"script": "function isoX(x,y) {return x - y};\nfunction isoY(x,y) { return (x + y) / 2};\nconst inst = runtime.objects.player.getFirstInstance()\n// Add path waypoints\nfor (let i=0;i<runtime.globalVars.pathLength;i++) {\n\tconst x = globalThis.path[i].x*32+400\n\tconst y = globalThis.path[i].y*32-150\n\tinst.behaviors.MoveTo.moveToPosition(isoX(x,y), isoY(x,y),false)\n\tconsole.log(isoX(x,y), isoY(x,y))\n}\nconsole.log(globalThis.path)\nfor (let i=0;i<runtime.globalVars.pathLength;i++) {\n\tconsole.log(inst.behaviors.MoveTo.getWaypoint(i))\n}\n\n\n"
 						}
 					],
 					"sid": 814903579620619
@@ -422,15 +422,6 @@
 								{
 									"type": "comment",
 									"text": "randomly set the 'animation' (i.e. the image) of the specified props. This will give the map some originality and save us from having to set it manually."
-								},
-								{
-									"id": "set-animation",
-									"objectClass": "randomAnim",
-									"sid": 667795291131046,
-									"parameters": {
-										"animation": "\"static\" & (floor(random(1, 17)) * 22.5) - 180",
-										"from": "beginning"
-									}
 								},
 								{
 									"type": "comment",
@@ -1302,35 +1293,7 @@
 							}
 						}
 					],
-					"sid": 692706648226430,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-children",
-									"objectClass": "subProp",
-									"sid": 430266150805271,
-									"parameters": {
-										"child": "subProp",
-										"which": "own"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "move-to-object",
-									"objectClass": "subProp",
-									"sid": 108245101654544,
-									"parameters": {
-										"where": "in-front",
-										"object": "sortable"
-									}
-								}
-							],
-							"sid": 715376688837149
-						}
-					]
+					"sid": 692706648226430
 				},
 				{
 					"eventType": "group",
@@ -1927,15 +1890,6 @@
 													"sid": 245057672801818,
 													"parameters": {
 														"object": "invalidLocation"
-													},
-													"isInverted": true
-												},
-												{
-													"id": "cursor-is-over-object",
-													"objectClass": "mouse",
-													"sid": 513396122365665,
-													"parameters": {
-														"object": "prop"
 													},
 													"isInverted": true
 												},
@@ -8178,15 +8132,6 @@
 											}
 										},
 										{
-											"id": "add-obstacle",
-											"objectClass": "enemy",
-											"sid": 401051289210605,
-											"behaviorType": "LineOfSight",
-											"parameters": {
-												"obstacle": "prop"
-											}
-										},
-										{
 											"id": "start-timer",
 											"objectClass": "enemy",
 											"sid": 168851847286209,
@@ -8839,16 +8784,7 @@
 										},
 										{
 											"eventType": "block",
-											"conditions": [
-												{
-													"id": "is-overlapping-another-object",
-													"objectClass": "enemy",
-													"sid": 341363874499595,
-													"parameters": {
-														"object": "prop"
-													}
-												}
-											],
+											"conditions": [],
 											"actions": [
 												{
 													"id": "stop",
@@ -9083,190 +9019,6 @@
 				}
 			],
 			"sid": 698161644159610
-		},
-		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "environment",
-			"description": "doors, transparencies",
-			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "group",
-					"disabled": false,
-					"title": "transparents",
-					"description": "",
-					"isActiveOnStart": true,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "every-x-seconds",
-									"objectClass": "System",
-									"sid": 841859110081763,
-									"parameters": {
-										"interval-seconds": ".5"
-									}
-								}
-							],
-							"actions": [
-								{
-									"type": "comment",
-									"text": "don't check for transparency overlaps every tick. also since the player shape changes minutely during animations don't wig out if we're very close to a transparent"
-								}
-							],
-							"sid": 972384705783051,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "is-overlapping-another-object",
-											"objectClass": "body",
-											"sid": 501636393154527,
-											"parameters": {
-												"object": "transparent"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-opacity",
-											"objectClass": "transparent",
-											"sid": 324999490389541,
-											"parameters": {
-												"opacity": "50"
-											}
-										}
-									],
-									"sid": 777441593434605
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 763324500605559
-										}
-									],
-									"actions": [
-										{
-											"id": "set-opacity",
-											"objectClass": "transparent",
-											"sid": 631500974105583,
-											"parameters": {
-												"opacity": "100"
-											}
-										}
-									],
-									"sid": 145335266554931
-								}
-							]
-						}
-					],
-					"sid": 373915111829325
-				},
-				{
-					"eventType": "group",
-					"disabled": false,
-					"title": "doors",
-					"description": "",
-					"isActiveOnStart": true,
-					"children": [
-						{
-							"eventType": "comment",
-							"text": "even though the doors only have 1 animation, we still have to \"set\" it to get it to work right. (Play and Stop don't work)"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "cursor-is-over-object",
-									"objectClass": "mouse",
-									"sid": 471386938140253,
-									"parameters": {
-										"object": "door"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-animation",
-									"objectClass": "door",
-									"sid": 236761484553217,
-									"parameters": {
-										"animation": "\"Default\"",
-										"from": "current-frame"
-									}
-								},
-								{
-									"id": "set-animation-speed",
-									"objectClass": "door",
-									"sid": 215728374211450,
-									"parameters": {
-										"speed": "10"
-									}
-								},
-								{
-									"id": "set-effect-parameter",
-									"objectClass": "door",
-									"sid": 244672807827438,
-									"parameters": {
-										"effect": "\"Brightness\"",
-										"parameter-index": "0",
-										"value": "110"
-									}
-								}
-							],
-							"sid": 558214191320744
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 757653240898616
-								}
-							],
-							"actions": [
-								{
-									"id": "set-animation",
-									"objectClass": "door",
-									"sid": 836635031431721,
-									"parameters": {
-										"animation": "\"Default\"",
-										"from": "current-frame"
-									}
-								},
-								{
-									"id": "set-animation-speed",
-									"objectClass": "door",
-									"sid": 844351404631993,
-									"parameters": {
-										"speed": "-10"
-									}
-								},
-								{
-									"id": "set-effect-parameter",
-									"objectClass": "door",
-									"sid": 889843962590487,
-									"parameters": {
-										"effect": "\"Brightness\"",
-										"parameter-index": "0",
-										"value": "100"
-									}
-								}
-							],
-							"sid": 843689254304856
-						}
-					],
-					"sid": 662460923767139
-				}
-			],
-			"sid": 934700656770935
 		},
 		{
 			"eventType": "group",

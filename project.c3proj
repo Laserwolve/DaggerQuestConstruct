@@ -192,14 +192,6 @@
 		},
 		{
 			"type": "effect",
-			"id": "brightness",
-			"name": "Brightness",
-			"author": "Scirra",
-			"version": "r317.2",
-			"bundled": false
-		},
-		{
-			"type": "effect",
 			"id": "alphaclamp",
 			"name": "Alpha clamp",
 			"author": "Scirra",
@@ -248,85 +240,7 @@
 			{
 				"items": [
 					"dirtBackground",
-					"witchsAbode",
-					"witchsAbodeDoor",
-					"cart",
-					"fence",
-					"repairedFence",
-					"house",
-					"barrels",
-					"barrels2",
-					"barrels3",
-					"longHouse",
-					"longHouseDoor",
-					"wheat",
-					"wheat2",
-					"wheat3",
-					"wheat4",
-					"wheatFieldCart",
-					"windmill",
-					"windmillBlades",
-					"windmillDoor",
-					"barrel",
-					"barrel2",
-					"barrel3",
-					"barrels4",
-					"firepit",
-					"grass",
-					"grass2",
-					"grass3",
-					"grass4",
-					"houseHorizontal",
-					"houseVertical",
-					"watchtower",
-					"shedPole",
-					"shedTop",
-					"barrels5",
-					"deadQueen",
-					"grave1",
-					"grave2",
-					"grave3",
-					"flippedTable",
-					"tree1",
-					"deadKing",
-					"pot",
-					"virginWidow",
-					"well",
-					"bench",
-					"fountain",
-					"fountainWater",
-					"tree0",
-					"tallGrass1",
-					"tallGrass2",
-					"tallGrass3",
-					"tallGrass4",
-					"crypt",
-					"grave4",
-					"grave5",
-					"hollyhock",
-					"wheelbarrow",
-					"blueFlowers1",
-					"blueFlowers2",
-					"blueFlowers3",
-					"blueFlowers4",
-					"blueFlowers5",
-					"blueFlowers6",
-					"boundary",
-					"hollyhock2",
-					"hollyhock3",
-					"lightBlueFlowers1",
-					"lightBlueFlowers2",
-					"lightBlueFlowers3",
-					"lightBlueFlowers4",
-					"lightBlueFlowers5",
-					"lightBlueFlowers6",
-					"lightBlueFlowers7",
-					"lightBlueFlowers8",
-					"animals",
-					"tree2",
-					"stable",
-					"gravelBackground",
-					"fenceForTesting"
+					"gravelBackground"
 				],
 				"subfolders": [],
 				"name": "environment"
@@ -573,13 +487,8 @@
 			"body",
 			"feet",
 			"sortable",
-			"prop",
 			"background",
-			"door",
-			"transparent",
 			"placeholder",
-			"subProp",
-			"randomAnim",
 			"arrays",
 			"modArrays",
 			"shadow",
@@ -604,7 +513,16 @@
 	},
 	"rootFileFolders": {
 		"script": {
-			"items": [],
+			"items": [
+				{
+					"name": "script.js",
+					"type": "text/javascript",
+					"sid": 914862481303739,
+					"script-info": {
+						"purpose": "imports-for-events"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"sound": {
@@ -731,14 +649,6 @@
 					"name": "abilities.json",
 					"type": "application/json",
 					"sid": 850923103170034,
-					"file-info": {
-						"purpose": "none"
-					}
-				},
-				{
-					"name": "easystar-0.4.4.js",
-					"type": "text/javascript",
-					"sid": 914862481303739,
 					"file-info": {
 						"purpose": "none"
 					}
