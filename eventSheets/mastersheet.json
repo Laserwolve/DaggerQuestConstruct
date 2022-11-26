@@ -22,6 +22,192 @@
 			"sid": 232531887577943
 		},
 		{
+			"eventType": "variable",
+			"name": "pathFound",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 953423456998462
+		},
+		{
+			"eventType": "variable",
+			"name": "pathLength",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 188537436683638
+		},
+		{
+			"eventType": "variable",
+			"name": "atEnd",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 843394921612395
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 415425823107127
+				}
+			],
+			"actions": [
+				{
+					"type": "script",
+					"script": "globalThis.easystar = new EasyStar.js();\nglobalThis.path = null\n\nconst easystar = globalThis.easystar\nconst grid = [[1,1,1,1,1,1,1,1],\n            [1,0,1,0,0,1,0,1],\n            [1,0,1,0,0,0,0,1],\n            [1,0,1,0,0,0,0,1],\n            [1,0,1,0,0,0,0,1],\n            [1,0,1,0,0,0,0,1],\n            [1,0,1,0,0,0,0,1],\n            [1,0,1,0,1,1,0,1],\n            [1,0,1,0,1,1,1,1],\n            [1,0,1,0,0,0,0,1],\n            [1,0,1,1,0,0,0,1],\n            [1,0,1,0,0,0,0,1],\n            [1,0,1,0,0,0,0,1],\n            [1,0,0,0,1,0,0,1],\n            [1,1,1,1,1,1,1,1]];\neasystar.setGrid(grid);\neasystar.setAcceptableTiles([0]);\neasystar.enableDiagonals();// we want path to have diagonals\neasystar.disableCornerCutting();// no diagonal path when walking at wall corners\neasystar.setIterationsPerCalculation(1000); // Don't block on pathfinding\n\n// function isoX(x,y) {return x - y};\n// function isoY(x,y) { return (x + y) / 2}\n// // Draw walls\n// for(let i=0;i<grid.length;i++) {\n// \tconst row = grid[i]\n// \tfor (let ii=0;ii<row.length;ii++) {\n// \t\tconst x = ii*32+400\n// \t\tconst y = i*32-150\n// \t\tif (row[ii]) runtime.objects.Sprite3.createInstance(0,isoX(x,y), isoY(x,y))\n// \t}\n// }"
+				}
+			],
+			"sid": 897569019651953
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "keyboard",
+					"sid": 190191205934391,
+					"parameters": {
+						"key": 80
+					}
+				}
+			],
+			"actions": [
+				{
+					"type": "script",
+					"script": "const easystar = globalThis.easystar\neasystar.findPath(1, 1, 6, 1, function( path ) {\n\tif (path === null) {\n\t\talert(\"Path was not found.\");\n\t} else {\n\t\tglobalThis.path = path\n\t\truntime.globalVars.pathFound = true\n\t\truntime.globalVars.pathLength = path.length\n\t}\n});"
+				}
+			],
+			"sid": 684331803610833
+		},
+		{
+			"eventType": "script",
+			"script": "// Calculate path if needed every tick, so it can be done async and not blocking\nconst easystar = globalThis.easystar\nif (easystar) easystar.calculate()"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 923022717878049,
+					"parameters": {
+						"variable": "pathFound"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 228927945738231,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"type": "script",
+							"script": "function isoX(x,y) {return x - y};\nfunction isoY(x,y) { return (x + y) / 2};\nconst inst = runtime.objects.Sprite.getFirstInstance()\n// Add path waypoints\nfor (let i=0;i<runtime.globalVars.pathLength;i++) {\n\tconst x = globalThis.path[i].x*32+400\n\tconst y = globalThis.path[i].y*32-150\n\tinst.behaviors.MoveTo.moveToPosition(isoX(x,y), isoY(x,y),false)\n\tconsole.log(isoX(x,y), isoY(x,y))\n}\nconsole.log(globalThis.path)\nfor (let i=0;i<runtime.globalVars.pathLength;i++) {\n\tconsole.log(inst.behaviors.MoveTo.getWaypoint(i))\n}\n\n\n"
+						}
+					],
+					"sid": 814903579620619
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 100748024833207,
+							"parameters": {
+								"variable": "pathFound",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 741604979328165
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-arrived",
+					"objectClass": "player",
+					"sid": 433898693913456,
+					"behaviorType": "MoveTo"
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 154274675979797,
+					"parameters": {
+						"first-value": "player.MoveTo.WaypointCount",
+						"comparison": 0,
+						"second-value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "toggle-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 188071251114096,
+					"parameters": {
+						"variable": "atEnd"
+					}
+				}
+			],
+			"sid": 914595320242603,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 610627213942782,
+							"parameters": {
+								"variable": "atEnd"
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "script",
+							"script": "easystar.findPath(6, 1, 1, 1, function( path ) {\n\tif (path === null) {\n\t\talert(\"Path was not found.\");\n\t} else {\n\t\tglobalThis.path = path\n\t\truntime.globalVars.pathFound = true\n\t\truntime.globalVars.pathLength = path.length\n\t}\n});\n"
+						}
+					],
+					"sid": 355717078861200
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 248833898695707
+						}
+					],
+					"actions": [
+						{
+							"type": "script",
+							"script": "easystar.findPath(1, 1, 6, 1, function( path ) {\n\tif (path === null) {\n\t\talert(\"Path was not found.\");\n\t} else {\n\t\tglobalThis.path = path\n\t\truntime.globalVars.pathFound = true\n\t\truntime.globalVars.pathLength = path.length\n\t}\n});\n"
+						}
+					],
+					"sid": 358803014438155
+				}
+			]
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "maintenances",
