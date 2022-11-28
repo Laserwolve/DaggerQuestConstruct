@@ -189,12 +189,19 @@
 									}
 								},
 								{
-									"id": "set-size",
+									"id": "set-width",
 									"objectClass": "projectile",
-									"sid": 163496242930037,
+									"sid": 374385833166570,
 									"parameters": {
-										"width": "128",
-										"height": "128"
+										"width": "128"
+									}
+								},
+								{
+									"id": "set-height",
+									"objectClass": "projectile",
+									"sid": 895739493782098,
+									"parameters": {
+										"height": "Self.Width / 2"
 									}
 								},
 								{

@@ -7875,9 +7875,9 @@
 										{
 											"id": "set-height",
 											"objectClass": "enemy",
-											"sid": 353427491377342,
+											"sid": 592108728985234,
 											"parameters": {
-												"height": "Self.Width"
+												"height": "Self.Width / 2"
 											}
 										},
 										{

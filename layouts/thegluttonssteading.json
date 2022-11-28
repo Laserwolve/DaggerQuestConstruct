@@ -564,15 +564,15 @@
 								"points": [
 									[
 										{
-											"x": 0.25,
-											"y": 0.25,
+											"x": 0.5,
+											"y": 0,
 											"z": 0,
 											"u": 0,
 											"v": 0
 										},
 										{
 											"x": 1,
-											"y": 0,
+											"y": 0.5,
 											"z": 0,
 											"u": 1,
 											"v": 0
@@ -581,14 +581,14 @@
 									[
 										{
 											"x": 0,
-											"y": 1,
+											"y": 0.5,
 											"z": 0,
 											"u": 0,
 											"v": 1
 										},
 										{
-											"x": 0.75,
-											"y": 0.75,
+											"x": 0.5,
+											"y": 1,
 											"z": 0,
 											"u": 1,
 											"v": 1
@@ -599,8 +599,8 @@
 							"world": {
 								"x": 6287,
 								"y": 7440,
-								"width": 64,
-								"height": 64,
+								"width": 80,
+								"height": 40,
 								"originX": 0.5,
 								"originY": 0.5,
 								"color": [
@@ -609,7 +609,99 @@
 									1,
 									1
 								],
-								"angle": 0.7853981633974483,
+								"angle": 0,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "projectile",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Animation 1",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 373,
+							"instanceVariables": {
+								"friendly": false,
+								"piercing": false,
+								"range": 0,
+								"slashDamage": 0,
+								"smashDamage": 0,
+								"stabDamage": 0,
+								"coldDamage": 0,
+								"fireDamage": 0,
+								"lightningDamage": 0,
+								"arcaneDamage": 0,
+								"holyDamage": 0,
+								"corruptDamage": 0
+							},
+							"behaviors": {
+								"Bullet": {
+									"properties": {
+										"speed": 400,
+										"acceleration": 0,
+										"gravity": 0,
+										"bounce-off-solids": false,
+										"set-angle": false,
+										"step": false,
+										"enabled": true
+									}
+								}
+							},
+							"mesh": {
+								"cols": 2,
+								"rows": 2,
+								"points": [
+									[
+										{
+											"x": 0.5,
+											"y": 0,
+											"z": 0,
+											"u": 0,
+											"v": 0
+										},
+										{
+											"x": 1,
+											"y": 0.5,
+											"z": 0,
+											"u": 1,
+											"v": 0
+										}
+									],
+									[
+										{
+											"x": 0,
+											"y": 0.5,
+											"z": 0,
+											"u": 0,
+											"v": 1
+										},
+										{
+											"x": 0.5,
+											"y": 1,
+											"z": 0,
+											"u": 1,
+											"v": 1
+										}
+									]
+								]
+							},
+							"world": {
+								"x": 5794,
+								"y": 8303,
+								"width": 64,
+								"height": 32,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
 								"zElevation": 0
 							}
 						},
@@ -698,15 +790,15 @@
 								"points": [
 									[
 										{
-											"x": 0.25,
-											"y": 0.25,
+											"x": 0.5,
+											"y": 0,
 											"z": 0,
 											"u": 0,
 											"v": 0
 										},
 										{
 											"x": 1,
-											"y": 0,
+											"y": 0.5,
 											"z": 0,
 											"u": 1,
 											"v": 0
@@ -715,14 +807,14 @@
 									[
 										{
 											"x": 0,
-											"y": 1,
+											"y": 0.5,
 											"z": 0,
 											"u": 0,
 											"v": 1
 										},
 										{
-											"x": 0.75,
-											"y": 0.75,
+											"x": 0.5,
+											"y": 1,
 											"z": 0,
 											"u": 1,
 											"v": 1
@@ -731,102 +823,10 @@
 								]
 							},
 							"world": {
-								"x": 5605,
-								"y": 8301,
-								"width": 96,
-								"height": 96,
-								"originX": 0.5,
-								"originY": 0.5,
-								"color": [
-									1,
-									1,
-									1,
-									1
-								],
-								"angle": 0.7853981633974483,
-								"zElevation": 0
-							}
-						},
-						{
-							"type": "projectile",
-							"properties": {
-								"initially-visible": true,
-								"initial-animation": "Animation 1",
-								"initial-frame": 0,
-								"enable-collisions": true,
-								"live-preview": false
-							},
-							"uid": 373,
-							"instanceVariables": {
-								"friendly": false,
-								"piercing": false,
-								"range": 0,
-								"slashDamage": 0,
-								"smashDamage": 0,
-								"stabDamage": 0,
-								"coldDamage": 0,
-								"fireDamage": 0,
-								"lightningDamage": 0,
-								"arcaneDamage": 0,
-								"holyDamage": 0,
-								"corruptDamage": 0
-							},
-							"behaviors": {
-								"Bullet": {
-									"properties": {
-										"speed": 400,
-										"acceleration": 0,
-										"gravity": 0,
-										"bounce-off-solids": false,
-										"set-angle": false,
-										"step": false,
-										"enabled": true
-									}
-								}
-							},
-							"mesh": {
-								"cols": 2,
-								"rows": 2,
-								"points": [
-									[
-										{
-											"x": 0.25,
-											"y": 0.25,
-											"z": 0,
-											"u": 0,
-											"v": 0
-										},
-										{
-											"x": 1,
-											"y": 0,
-											"z": 0,
-											"u": 1,
-											"v": 0
-										}
-									],
-									[
-										{
-											"x": 0,
-											"y": 1,
-											"z": 0,
-											"u": 0,
-											"v": 1
-										},
-										{
-											"x": 0.75,
-											"y": 0.75,
-											"z": 0,
-											"u": 1,
-											"v": 1
-										}
-									]
-								]
-							},
-							"world": {
-								"x": 5794,
-								"y": 8303,
+								"x": 5523,
+								"y": 8332,
 								"width": 64,
-								"height": 64,
+								"height": 32,
 								"originX": 0.5,
 								"originY": 0.5,
 								"color": [
@@ -835,14 +835,14 @@
 									1,
 									1
 								],
-								"angle": 0.7853981633974483,
+								"angle": 0,
 								"zElevation": 0
 							}
 						}
 					],
 					"sid": 988900429067042,
 					"effectTypes": [],
-					"isInitiallyVisible": false,
+					"isInitiallyVisible": true,
 					"isInitiallyInteractive": true,
 					"color": [
 						1,
