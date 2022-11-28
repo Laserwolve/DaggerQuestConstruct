@@ -494,60 +494,6 @@
 			"overriden": 0,
 			"subLayers": [
 				{
-					"name": "shadow",
-					"overriden": 0,
-					"subLayers": [],
-					"instances": [],
-					"sid": 158613570084479,
-					"effectTypes": [
-						{
-							"effectId": "blurhorizontal",
-							"name": "BlurHorizontal",
-							"instance": {
-								"isEnabled": true,
-								"parameters": {
-									"intensity": 0.75
-								}
-							}
-						},
-						{
-							"effectId": "blurvertical",
-							"name": "BlurVertical",
-							"instance": {
-								"isEnabled": true,
-								"parameters": {
-									"intensity": 0.75
-								}
-							}
-						}
-					],
-					"isInitiallyVisible": true,
-					"isInitiallyInteractive": false,
-					"color": [
-						1,
-						1,
-						1,
-						0.3
-					],
-					"backgroundColor": [
-						1,
-						1,
-						1,
-						1
-					],
-					"isTransparent": true,
-					"parallaxX": 1,
-					"parallaxY": 1,
-					"scaleRate": 1,
-					"forceOwnTexture": false,
-					"renderingMode": "3d",
-					"drawOrder": "z-order",
-					"useRenderCells": false,
-					"blendMode": "normal",
-					"zElevation": 0,
-					"global": false
-				},
-				{
 					"name": "mechanics",
 					"overriden": 0,
 					"subLayers": [],

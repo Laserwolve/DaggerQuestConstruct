@@ -6,8 +6,12 @@
 	"behaviorTypes": [],
 	"effectTypes": [
 		{
-			"effectId": "alphaclamp",
-			"name": "AlphaClamp"
+			"effectId": "blurhorizontal",
+			"name": "BlurHorizontal"
+		},
+		{
+			"effectId": "blurvertical",
+			"name": "BlurVertical"
 		}
 	],
 	"members": [

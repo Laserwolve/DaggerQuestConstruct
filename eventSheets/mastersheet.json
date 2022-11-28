@@ -40,7 +40,7 @@
 							"conditions": [
 								{
 									"id": "on-created",
-									"objectClass": "everything",
+									"objectClass": "hasShadow",
 									"sid": 222737292507150
 								}
 							],
@@ -52,12 +52,12 @@
 								{
 									"id": "create-object-by-name",
 									"objectClass": "System",
-									"sid": 628579320718307,
+									"sid": 571955336755167,
 									"parameters": {
-										"object-name": "everything.ObjectTypeName & \"_shadow\"",
-										"layer": "\"shadow\"",
-										"x": "everything.X - 1",
-										"y": "everything.Y - 1",
+										"object-name": "hasShadow.ObjectTypeName & \"_shadow\"",
+										"layer": "\"main\"",
+										"x": "hasShadow.X - 1",
+										"y": "hasShadow.Y - 1",
 										"create-hierarchy": false,
 										"template-name": "\"\""
 									}
@@ -80,7 +80,7 @@
 									"actions": [
 										{
 											"id": "add-child",
-											"objectClass": "everything",
+											"objectClass": "hasShadow",
 											"sid": 413333260876326,
 											"parameters": {
 												"child": "shadow",
@@ -94,37 +94,31 @@
 											}
 										},
 										{
-											"type": "comment",
-											"text": "we can't use the alpha clamp layer effect, since we want to change the layer's opacity"
+											"id": "set-opacity",
+											"objectClass": "shadow",
+											"sid": 537278078206295,
+											"parameters": {
+												"opacity": "30"
+											}
 										},
 										{
 											"id": "set-effect-parameter",
 											"objectClass": "shadow",
-											"sid": 715700397535764,
+											"sid": 278171440213398,
 											"parameters": {
-												"effect": "\"AlphaClamp\"",
+												"effect": "\"BlurHorizontal\"",
 												"parameter-index": "0",
-												"value": "25"
+												"value": "75"
 											}
 										},
 										{
 											"id": "set-effect-parameter",
 											"objectClass": "shadow",
-											"sid": 907650352477431,
+											"sid": 899997989053379,
 											"parameters": {
-												"effect": "\"AlphaClamp\"",
-												"parameter-index": "1",
-												"value": "0"
-											}
-										},
-										{
-											"id": "set-effect-parameter",
-											"objectClass": "shadow",
-											"sid": 279897192028576,
-											"parameters": {
-												"effect": "\"AlphaClamp\"",
-												"parameter-index": "2",
-												"value": "100"
+												"effect": "\"BlurVertical\"",
+												"parameter-index": "0",
+												"value": "75"
 											}
 										}
 									],
@@ -1162,6 +1156,45 @@
 							"isStatic": true,
 							"isConstant": false,
 							"sid": 597942408782996
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 612095739225711,
+									"parameters": {
+										"object": "hasShadow"
+									}
+								},
+								{
+									"id": "is-on-screen",
+									"objectClass": "hasShadow",
+									"sid": 366575059120433
+								},
+								{
+									"id": "pick-children",
+									"objectClass": "hasShadow",
+									"sid": 387310890452967,
+									"parameters": {
+										"child": "shadow",
+										"which": "own"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "move-to-object",
+									"objectClass": "shadow",
+									"sid": 697793323102863,
+									"parameters": {
+										"where": "behind",
+										"object": "hasShadow"
+									}
+								}
+							],
+							"sid": 908528366152950
 						},
 						{
 							"eventType": "block",

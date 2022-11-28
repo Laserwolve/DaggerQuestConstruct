@@ -197,14 +197,6 @@
 			"author": "Scirra",
 			"version": "r317.2",
 			"bundled": false
-		},
-		{
-			"type": "effect",
-			"id": "alphaclamp",
-			"name": "Alpha clamp",
-			"author": "Scirra",
-			"version": "r317.2",
-			"bundled": false
 		}
 	],
 	"uniqueId": "6qmjko7p97e",
@@ -583,7 +575,7 @@
 			"arrays",
 			"modArrays",
 			"shadow",
-			"everything"
+			"hasShadow"
 		],
 		"subfolders": []
 	},
