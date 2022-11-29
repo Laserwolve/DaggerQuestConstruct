@@ -63,7 +63,20 @@
 			"actions": [
 				{
 					"type": "script",
-					"script": "globalThis.easystar = new EasyStar.js();\nglobalThis.path = null\n\nconst easystar = globalThis.easystar\nconst grid = [[1,1,1,1,1,1,1,1],\n            [1,0,1,0,0,1,0,1],\n            [1,0,1,0,0,0,0,1],\n            [1,0,1,0,0,0,0,1],\n            [1,0,1,0,0,0,0,1],\n            [1,0,1,0,0,0,0,1],\n            [1,0,1,0,0,0,0,1],\n            [1,0,1,0,1,1,0,1],\n            [1,0,1,0,1,1,1,1],\n            [1,0,1,0,0,0,0,1],\n            [1,0,1,1,0,0,0,1],\n            [1,0,1,0,0,0,0,1],\n            [1,0,1,0,0,0,0,1],\n            [1,0,0,0,1,0,0,1],\n            [1,1,1,1,1,1,1,1]];\neasystar.setGrid(grid);\neasystar.setAcceptableTiles([0]);\neasystar.enableDiagonals();// we want path to have diagonals\neasystar.disableCornerCutting();// no diagonal path when walking at wall corners\neasystar.setIterationsPerCalculation(1000); // Don't block on pathfinding\n\n// function isoX(x,y) {return x - y};\n// function isoY(x,y) { return (x + y) / 2}\n// // Draw walls\n// for(let i=0;i<grid.length;i++) {\n// \tconst row = grid[i]\n// \tfor (let ii=0;ii<row.length;ii++) {\n// \t\tconst x = ii*32+400\n// \t\tconst y = i*32-150\n// \t\tif (row[ii]) runtime.objects.Sprite3.createInstance(0,isoX(x,y), isoY(x,y))\n// \t}\n// }"
+					"script": "globalThis.easystar = new EasyStar.js();\nglobalThis.path = null\n\nconst easystar = globalThis.easystar\nconst grid = [[1,1,1,1,1,1,1,1],\n            [1,0,1,0,0,1,0,1],\n            [1,0,1,0,0,0,0,1],\n            [1,0,1,0,0,0,0,1],\n            [1,0,1,0,0,0,0,1],\n            [1,0,1,0,0,0,0,1],\n            [1,0,1,0,0,0,0,1],\n            [1,0,1,0,1,1,0,1],\n            [1,0,1,0,1,1,1,1],\n            [1,0,1,0,0,0,0,1],\n            [1,0,1,1,0,0,0,1],\n            [1,0,1,0,0,0,0,1],\n            [1,0,1,0,0,0,0,1],\n            [1,0,0,0,1,0,0,1],\n            [1,1,1,1,1,1,1,1]];\neasystar.setGrid(grid);\neasystar.setAcceptableTiles([0]);\neasystar.enableDiagonals();// we want path to have diagonals\neasystar.disableCornerCutting();// no diagonal path when walking at wall corners\neasystar.setIterationsPerCalculation(1000); // Don't block on pathfinding"
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 256179320108352,
+					"parameters": {
+						"object-to-create": "grid",
+						"layer": "\"mecahanics\"",
+						"x": "sqrt(512)",
+						"y": "sqrt(128)",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
 				}
 			],
 			"sid": 897569019651953

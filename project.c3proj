@@ -208,7 +208,8 @@
 			"player",
 			"enemy",
 			"projectile",
-			"lootTooltipBackground"
+			"lootTooltipBackground",
+			"grid"
 		],
 		"subfolders": [
 			{
