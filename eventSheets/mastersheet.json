@@ -22,6 +22,332 @@
 			"sid": 232531887577943
 		},
 		{
+			"eventType": "variable",
+			"name": "upperRightRow",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 534015833694132
+		},
+		{
+			"eventType": "variable",
+			"name": "bottomLeftRow",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 353527154562134
+		},
+		{
+			"eventType": "variable",
+			"name": "upperLeftColumn",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 503712833270690
+		},
+		{
+			"eventType": "variable",
+			"name": "bottomRightColumn",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 908988193850076
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-on-screen",
+					"objectClass": "grid",
+					"sid": 724177485816259
+				}
+			],
+			"actions": [],
+			"sid": 811910673238179,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-nearestfurthest",
+							"objectClass": "grid",
+							"sid": 613938334360175,
+							"parameters": {
+								"which": "nearest",
+								"x": "LayoutWidth",
+								"y": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 827352156189375,
+							"parameters": {
+								"variable": "upperRightRow",
+								"value": "grid.row"
+							}
+						}
+					],
+					"sid": 313045190338548
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-nearestfurthest",
+							"objectClass": "grid",
+							"sid": 702086354699243,
+							"parameters": {
+								"which": "nearest",
+								"x": "0",
+								"y": "LayoutHeight"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 431044718776652,
+							"parameters": {
+								"variable": "bottomLeftRow",
+								"value": "grid.row"
+							}
+						}
+					],
+					"sid": 522854332165531
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-nearestfurthest",
+							"objectClass": "grid",
+							"sid": 174564595839050,
+							"parameters": {
+								"which": "nearest",
+								"x": "0",
+								"y": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 917621907865834,
+							"parameters": {
+								"variable": "upperLeftColumn",
+								"value": "grid.column"
+							}
+						}
+					],
+					"sid": 620148881824096
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-nearestfurthest",
+							"objectClass": "grid",
+							"sid": 654139639634783,
+							"parameters": {
+								"which": "nearest",
+								"x": "LayoutHeight",
+								"y": "LayoutWidth"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 656235789876988,
+							"parameters": {
+								"variable": "bottomRightColumn",
+								"value": "grid.column"
+							}
+						}
+					],
+					"sid": 682905290714922
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 394707002717968
+				}
+			],
+			"actions": [
+				{
+					"id": "set-size",
+					"objectClass": "pathfindingGrid",
+					"sid": 360743618055749,
+					"parameters": {
+						"width": "bottomRightColumn - upperLeftColumn",
+						"height": "bottomLeftRow - upperRightRow",
+						"depth": "1"
+					}
+				}
+			],
+			"sid": 322192533326434
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "for",
+					"objectClass": "System",
+					"sid": 811044876543649,
+					"parameters": {
+						"name": "\"gridRow\"",
+						"start-index": "upperRightRow",
+						"end-index": "bottomLeftRow"
+					}
+				},
+				{
+					"id": "for",
+					"objectClass": "System",
+					"sid": 218811702308351,
+					"parameters": {
+						"name": "\"gridColumn\"",
+						"start-index": "upperLeftColumn",
+						"end-index": "bottomRightColumn"
+					}
+				},
+				{
+					"id": "pick-by-evaluate",
+					"objectClass": "System",
+					"sid": 832521450708340,
+					"parameters": {
+						"object": "grid",
+						"expression": "grid.row = loopindex(\"gridRow\") & grid.column = loopindex(\"gridColumn\")"
+					}
+				}
+			],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "populate an arrray here"
+				}
+			],
+			"sid": 814574774838965,
+			"disabled": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 998079405812825
+				},
+				{
+					"id": "for",
+					"objectClass": "System",
+					"sid": 791259475963071,
+					"parameters": {
+						"name": "\"row\"",
+						"start-index": "0",
+						"end-index": "LayoutWidth / grid.Width"
+					}
+				},
+				{
+					"id": "for",
+					"objectClass": "System",
+					"sid": 347578899883573,
+					"parameters": {
+						"name": "\"column\"",
+						"start-index": "0",
+						"end-index": "LayoutWidth / grid.Width"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 611632021894118,
+					"parameters": {
+						"object-to-create": "grid",
+						"layer": "grid.ObjectTypeName",
+						"x": "((LayoutWidth / 2) + ((grid.Width / 2) * loopindex(\"column\"))) - ((grid.Width / 2) * loopindex(\"row\"))",
+						"y": "(grid.Height / 2) * loopindex(\"column\") + ((grid.Height / 2) * loopindex(\"row\"))",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "grid",
+					"sid": 623566626625217,
+					"parameters": {
+						"instance-variable": "row",
+						"value": "loopindex(\"row\")"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "grid",
+					"sid": 160005192286168,
+					"parameters": {
+						"instance-variable": "column",
+						"value": "loopindex(\"column\")"
+					}
+				}
+			],
+			"sid": 511540528496147,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "evaluate-expression",
+							"objectClass": "System",
+							"sid": 981967369250748,
+							"parameters": {
+								"value": "loopindex(\"row\") % 2 = 0 & loopindex(\"column\") % 2 = 0 "
+							}
+						},
+						{
+							"id": "evaluate-expression",
+							"objectClass": "System",
+							"sid": 118213079589286,
+							"parameters": {
+								"value": "loopindex(\"row\") % 2 <> 0 & loopindex(\"column\") % 2 <> 0 "
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-default-color",
+							"objectClass": "grid",
+							"sid": 967755918681025,
+							"parameters": {
+								"color": "rgbEx(150, 150, 150)"
+							}
+						}
+					],
+					"sid": 598491600546696,
+					"isOrBlock": true
+				}
+			]
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "maintenances",
@@ -230,15 +556,6 @@
 								{
 									"type": "comment",
 									"text": "randomly set the 'animation' (i.e. the image) of the specified props. This will give the map some originality and save us from having to set it manually."
-								},
-								{
-									"id": "set-animation",
-									"objectClass": "randomAnim",
-									"sid": 667795291131046,
-									"parameters": {
-										"animation": "\"static\" & (floor(random(1, 17)) * 22.5) - 180",
-										"from": "beginning"
-									}
 								},
 								{
 									"type": "comment",
@@ -1110,35 +1427,7 @@
 							}
 						}
 					],
-					"sid": 692706648226430,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-children",
-									"objectClass": "subProp",
-									"sid": 430266150805271,
-									"parameters": {
-										"child": "subProp",
-										"which": "own"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "move-to-object",
-									"objectClass": "subProp",
-									"sid": 108245101654544,
-									"parameters": {
-										"where": "in-front",
-										"object": "sortable"
-									}
-								}
-							],
-							"sid": 715376688837149
-						}
-					]
+					"sid": 692706648226430
 				},
 				{
 					"eventType": "group",
@@ -1774,15 +2063,6 @@
 													"sid": 245057672801818,
 													"parameters": {
 														"object": "invalidLocation"
-													},
-													"isInverted": true
-												},
-												{
-													"id": "cursor-is-over-object",
-													"objectClass": "mouse",
-													"sid": 513396122365665,
-													"parameters": {
-														"object": "prop"
 													},
 													"isInverted": true
 												},
@@ -4877,10 +5157,10 @@
 								{
 									"id": "create-object-by-name",
 									"objectClass": "System",
-									"sid": 763188451335308,
+									"sid": 844904364523569,
 									"parameters": {
 										"object-name": "advancedRandom.Weighted & \"_loot\"",
-										"layer": "\"background\"",
+										"layer": "\"loot\"",
 										"x": "body.X",
 										"y": "body.Y",
 										"create-hierarchy": false,
@@ -7802,12 +8082,12 @@
 								{
 									"id": "create-object",
 									"objectClass": "System",
-									"sid": 999324413163087,
+									"sid": 971014334792706,
 									"parameters": {
 										"object-to-create": "enemy",
 										"layer": "\"mechanics\"",
-										"x": "5922 + random(-100, 100)",
-										"y": "7484 + random(-100, 100)",
+										"x": "100 + random(-100, 100)",
+										"y": "100 + random(-100, 100)",
 										"create-hierarchy": false,
 										"template-name": "\"\""
 									}
@@ -8022,15 +8302,6 @@
 											"behaviorType": "LineOfSight",
 											"parameters": {
 												"range": "int(Functions.arrayLookup(\"enemies\",\"simpleName\", Self.simpleName, \"sightRange\"))"
-											}
-										},
-										{
-											"id": "add-obstacle",
-											"objectClass": "enemy",
-											"sid": 401051289210605,
-											"behaviorType": "LineOfSight",
-											"parameters": {
-												"obstacle": "prop"
 											}
 										},
 										{
@@ -8686,16 +8957,7 @@
 										},
 										{
 											"eventType": "block",
-											"conditions": [
-												{
-													"id": "is-overlapping-another-object",
-													"objectClass": "enemy",
-													"sid": 341363874499595,
-													"parameters": {
-														"object": "prop"
-													}
-												}
-											],
+											"conditions": [],
 											"actions": [
 												{
 													"id": "stop",
@@ -8930,190 +9192,6 @@
 				}
 			],
 			"sid": 698161644159610
-		},
-		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "environment",
-			"description": "doors, transparencies",
-			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "group",
-					"disabled": false,
-					"title": "transparents",
-					"description": "",
-					"isActiveOnStart": true,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "every-x-seconds",
-									"objectClass": "System",
-									"sid": 841859110081763,
-									"parameters": {
-										"interval-seconds": ".5"
-									}
-								}
-							],
-							"actions": [
-								{
-									"type": "comment",
-									"text": "don't check for transparency overlaps every tick. also since the player shape changes minutely during animations don't wig out if we're very close to a transparent"
-								}
-							],
-							"sid": 972384705783051,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "is-overlapping-another-object",
-											"objectClass": "body",
-											"sid": 501636393154527,
-											"parameters": {
-												"object": "transparent"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-opacity",
-											"objectClass": "transparent",
-											"sid": 324999490389541,
-											"parameters": {
-												"opacity": "50"
-											}
-										}
-									],
-									"sid": 777441593434605
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 763324500605559
-										}
-									],
-									"actions": [
-										{
-											"id": "set-opacity",
-											"objectClass": "transparent",
-											"sid": 631500974105583,
-											"parameters": {
-												"opacity": "100"
-											}
-										}
-									],
-									"sid": 145335266554931
-								}
-							]
-						}
-					],
-					"sid": 373915111829325
-				},
-				{
-					"eventType": "group",
-					"disabled": false,
-					"title": "doors",
-					"description": "",
-					"isActiveOnStart": true,
-					"children": [
-						{
-							"eventType": "comment",
-							"text": "even though the doors only have 1 animation, we still have to \"set\" it to get it to work right. (Play and Stop don't work)"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "cursor-is-over-object",
-									"objectClass": "mouse",
-									"sid": 471386938140253,
-									"parameters": {
-										"object": "door"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-animation",
-									"objectClass": "door",
-									"sid": 236761484553217,
-									"parameters": {
-										"animation": "\"Default\"",
-										"from": "current-frame"
-									}
-								},
-								{
-									"id": "set-animation-speed",
-									"objectClass": "door",
-									"sid": 215728374211450,
-									"parameters": {
-										"speed": "10"
-									}
-								},
-								{
-									"id": "set-effect-parameter",
-									"objectClass": "door",
-									"sid": 244672807827438,
-									"parameters": {
-										"effect": "\"Brightness\"",
-										"parameter-index": "0",
-										"value": "110"
-									}
-								}
-							],
-							"sid": 558214191320744
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 757653240898616
-								}
-							],
-							"actions": [
-								{
-									"id": "set-animation",
-									"objectClass": "door",
-									"sid": 836635031431721,
-									"parameters": {
-										"animation": "\"Default\"",
-										"from": "current-frame"
-									}
-								},
-								{
-									"id": "set-animation-speed",
-									"objectClass": "door",
-									"sid": 844351404631993,
-									"parameters": {
-										"speed": "-10"
-									}
-								},
-								{
-									"id": "set-effect-parameter",
-									"objectClass": "door",
-									"sid": 889843962590487,
-									"parameters": {
-										"effect": "\"Brightness\"",
-										"parameter-index": "0",
-										"value": "100"
-									}
-								}
-							],
-							"sid": 843689254304856
-						}
-					],
-					"sid": 662460923767139
-				}
-			],
-			"sid": 934700656770935
 		},
 		{
 			"eventType": "group",
