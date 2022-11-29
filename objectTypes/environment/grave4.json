@@ -1,0 +1,44 @@
+{
+	"name": "grave4",
+	"plugin-id": "Sprite",
+	"sid": 299746764348886,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 306,
+						"height": 157,
+						"originX": 0.4803921568627451,
+						"originY": 0.01910828025477707,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4419772,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Image Point 1",
+								"x": 1.0032679738562091,
+								"y": 0.6878980891719745
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 354922500791659,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 10
+			}
+		],
+		"subfolders": []
+	}
+}

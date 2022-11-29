@@ -1,0 +1,56 @@
+{
+	"name": "shedPole",
+	"plugin-id": "Sprite",
+	"sid": 139648351817315,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 33,
+						"height": 225,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3938040,
+						"collisionPoly": {
+							"points": [
+								0.04545457435376715,
+								0.9636111365424264,
+								0.49052975394509074,
+								0.9174999448988173,
+								0.9810606060606062,
+								0.9599999321831598,
+								0.49431887539950287,
+								0.9969444486829967
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Image Point 1",
+								"x": 0.9393939393939394,
+								"y": 0.96
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 775885575114616,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 10
+			}
+		],
+		"subfolders": []
+	}
+}

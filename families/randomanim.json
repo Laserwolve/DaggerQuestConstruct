@@ -1,0 +1,13 @@
+{
+	"name": "randomAnim",
+	"plugin-id": "Sprite",
+	"sid": 152266187953553,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"tree2",
+		"tree1",
+		"tree0"
+	]
+}

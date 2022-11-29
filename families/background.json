@@ -6,6 +6,7 @@
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"members": [
-		"dirtBackground"
+		"dirtBackground",
+		"gravelBackground"
 	]
 }

@@ -1,0 +1,62 @@
+{
+	"name": "wheatFieldCart",
+	"plugin-id": "Sprite",
+	"sid": 445881233711655,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 334,
+						"height": 204,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6724578,
+						"collisionPoly": {
+							"points": [
+								0.10479041916167661,
+								0.9166667040656592,
+								0,
+								0.5686274696798884,
+								0.0778443799047413,
+								0.401960961958941,
+								0.522454952765368,
+								0.4460784500720453,
+								1,
+								0.6372548178130508,
+								1,
+								0.9632352941176472,
+								0.23203592814371257,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Image Point 1",
+								"x": 0.9910179640718563,
+								"y": 0.9558823529411765
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 325703666857318,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 10
+			}
+		],
+		"subfolders": []
+	}
+}

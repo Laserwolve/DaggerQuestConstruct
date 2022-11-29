@@ -1,0 +1,58 @@
+{
+	"name": "longHouse",
+	"plugin-id": "Sprite",
+	"sid": 781984106200973,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 1500,
+						"height": 1457,
+						"originX": 0.4975320406278855,
+						"originY": 0.2716805547687219,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1705937,
+						"collisionPoly": {
+							"points": [
+								0,
+								0.8469457371069624,
+								0.4866666666666669,
+								0.2352436225383186,
+								1,
+								0.4965683590817631,
+								0.5950834528605142,
+								1,
+								0,
+								0.8778311389721496
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Image Point 1",
+								"x": 0.9993333333333333,
+								"y": 0.48936170212765956
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 128187498571516,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 10
+			}
+		],
+		"subfolders": []
+	}
+}

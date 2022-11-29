@@ -1,0 +1,56 @@
+{
+	"name": "houseVertical",
+	"plugin-id": "Sprite",
+	"sid": 883560192292315,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 1322,
+						"height": 1442,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 934083,
+						"collisionPoly": {
+							"points": [
+								0.12405464761015508,
+								0.29958389007102765,
+								0.8759458140778649,
+								0.3162273983684225,
+								0.8759458140778651,
+								1,
+								0.12102874432677763,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Image Point 1",
+								"x": 0.8313161875945537,
+								"y": 0.9937586685159501
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 295351406885713,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 10
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -1,0 +1,60 @@
+{
+	"name": "crypt",
+	"plugin-id": "Sprite",
+	"sid": 964431004377591,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 593,
+						"height": 612,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5299542,
+						"collisionPoly": {
+							"points": [
+								0,
+								0.7418300279604844,
+								0,
+								0.6968954653521766,
+								0.4704892703694799,
+								0.4591501460355869,
+								1,
+								0.7328429970086788,
+								1,
+								0.7810457267013247,
+								0.5295108582881005,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Image Point 1",
+								"x": 1,
+								"y": 0.7794117647058824
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 692129102881759,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 10
+			}
+		],
+		"subfolders": []
+	}
+}

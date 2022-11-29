@@ -1,0 +1,56 @@
+{
+	"name": "flippedTable",
+	"plugin-id": "Sprite",
+	"sid": 116069940367976,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 236,
+						"height": 267,
+						"originX": 0.44506726457399104,
+						"originY": 0.20389233954451347,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2399920,
+						"collisionPoly": {
+							"points": [
+								0,
+								1,
+								0,
+								0.5784401958247063,
+								1,
+								0,
+								1,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Image Point 1",
+								"x": 0.35833333333333334,
+								"y": 1
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 311339841738972,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 10
+			}
+		],
+		"subfolders": []
+	}
+}

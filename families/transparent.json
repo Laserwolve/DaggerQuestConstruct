@@ -1,0 +1,11 @@
+{
+	"name": "transparent",
+	"plugin-id": "Sprite",
+	"sid": 905262697149634,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"shedTop"
+	]
+}

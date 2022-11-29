@@ -1,0 +1,64 @@
+{
+	"name": "blueFlowers2",
+	"plugin-id": "Sprite",
+	"sid": 172348303080303,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 93,
+						"height": 114,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7008445,
+						"collisionPoly": {
+							"points": [
+								0.2903225806451613,
+								0.09649122807017543,
+								0.4838709677419355,
+								0.15789473684210525,
+								0.5698924731182796,
+								0.17543859649122806,
+								0.6666666666666666,
+								0.2543859649122807,
+								0.7634408602150538,
+								0.4824561403508772,
+								0.4838709677419355,
+								0.9035087719298246,
+								0.3225806451612903,
+								0.37719298245614036,
+								0.3010752688172043,
+								0.2543859649122807
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Image Point 1",
+								"x": 0.45161290322580644,
+								"y": 0.9298245614035088
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 457847070522972,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 10
+			}
+		],
+		"subfolders": []
+	}
+}
