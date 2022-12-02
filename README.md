@@ -10,8 +10,6 @@
 >
 >[*Something Awful Forums*](https://forums.somethingawful.com/)
 
-### Screenshots coming soon!
-
 ![Example 1](screenshots/example1.png)
 ![Example 2](screenshots/example2.png)
 ![Example 3](screenshots/example3.png)
