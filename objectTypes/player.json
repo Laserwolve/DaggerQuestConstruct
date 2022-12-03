@@ -158,6 +158,16 @@
 			"behaviorId": "solid",
 			"name": "Solid",
 			"sid": 811913334378350
+		},
+		{
+			"behaviorId": "Pathfinding",
+			"name": "Pathfinding",
+			"sid": 991176732083826
+		},
+		{
+			"behaviorId": "LOS",
+			"name": "LineOfSight",
+			"sid": 296917789897994
 		}
 	],
 	"effectTypes": [],

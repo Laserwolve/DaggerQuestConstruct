@@ -120,6 +120,14 @@
 		},
 		{
 			"type": "behavior",
+			"id": "Pathfinding",
+			"name": "Pathfinding",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "LOS",
 			"name": "Line of sight",
 			"author": "Scirra",
@@ -208,7 +216,8 @@
 			"player",
 			"enemy",
 			"projectile",
-			"lootTooltipBackground"
+			"lootTooltipBackground",
+			"leSolid"
 		],
 		"subfolders": [
 			{

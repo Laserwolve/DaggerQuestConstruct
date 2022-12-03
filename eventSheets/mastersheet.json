@@ -2174,6 +2174,33 @@
 									"eventType": "block",
 									"conditions": [
 										{
+											"id": "on-click",
+											"objectClass": "mouse",
+											"sid": 635897691237900,
+											"parameters": {
+												"mouse-button": "left",
+												"click-type": "clicked"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "find-path",
+											"objectClass": "player",
+											"sid": 627748482801652,
+											"behaviorType": "Pathfinding",
+											"parameters": {
+												"x": "mouse.X",
+												"y": "mouse.Y"
+											}
+										}
+									],
+									"sid": 491621953146205
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
 											"id": "cursor-is-over-object",
 											"objectClass": "mouse",
 											"sid": 405646899565621,
@@ -2203,6 +2230,7 @@
 									],
 									"actions": [],
 									"sid": 196481541219343,
+									"disabled": true,
 									"children": [
 										{
 											"eventType": "block",
@@ -2234,6 +2262,7 @@
 											],
 											"actions": [],
 											"sid": 320252273337474,
+											"disabled": true,
 											"children": [
 												{
 													"eventType": "block",
@@ -2255,7 +2284,8 @@
 															"sid": 155094480660526
 														}
 													],
-													"sid": 894707140457159
+													"sid": 894707140457159,
+													"disabled": true
 												},
 												{
 													"eventType": "block",
@@ -2277,18 +2307,18 @@
 															}
 														},
 														{
-															"id": "move-to-position",
+															"id": "find-path",
 															"objectClass": "player",
-															"sid": 849589770567700,
-															"behaviorType": "MoveTo",
+															"sid": 623491928790930,
+															"behaviorType": "Pathfinding",
 															"parameters": {
 																"x": "mouse.X",
-																"y": "mouse.Y",
-																"mode": "direct"
+																"y": "mouse.Y"
 															}
 														}
 													],
-													"sid": 924277480519900
+													"sid": 924277480519900,
+													"disabled": true
 												}
 											]
 										},
@@ -2324,14 +2354,13 @@
 											],
 											"actions": [
 												{
-													"id": "move-to-position",
+													"id": "find-path",
 													"objectClass": "player",
-													"sid": 292436603659915,
-													"behaviorType": "MoveTo",
+													"sid": 568516978665951,
+													"behaviorType": "Pathfinding",
 													"parameters": {
 														"x": "mouse.X",
-														"y": "mouse.Y",
-														"mode": "direct"
+														"y": "mouse.Y"
 													}
 												},
 												{
@@ -2344,7 +2373,8 @@
 													}
 												}
 											],
-											"sid": 793998442532164
+											"sid": 793998442532164,
+											"disabled": true
 										}
 									]
 								},
@@ -2456,6 +2486,166 @@
 										}
 									],
 									"isOrBlock": true
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-path-found",
+									"objectClass": "player",
+									"sid": 859722707352122,
+									"behaviorType": "Pathfinding"
+								}
+							],
+							"actions": [],
+							"sid": 719229297894818,
+							"children": [
+								{
+									"eventType": "variable",
+									"name": "node",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": true,
+									"isConstant": false,
+									"sid": 309335636572904
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for",
+											"objectClass": "System",
+											"sid": 945884758142405,
+											"parameters": {
+												"name": "\"initialNode\"",
+												"start-index": "0",
+												"end-index": "player.Pathfinding.NodeCount"
+											}
+										},
+										{
+											"id": "has-los-between-positions",
+											"objectClass": "player",
+											"sid": 607663896328458,
+											"behaviorType": "LineOfSight",
+											"parameters": {
+												"from-x": "player.X",
+												"from-y": "player.Y",
+												"from-angle": "0",
+												"to-x": "Self.Pathfinding.NodeXAt(loopindex(\"initialNode\"))",
+												"to-y": "Self.Pathfinding.NodeYAt(loopindex(\"initialNode\"))"
+											}
+										},
+										{
+											"id": "has-los-between-positions",
+											"objectClass": "player",
+											"sid": 514176807643669,
+											"behaviorType": "LineOfSight",
+											"parameters": {
+												"from-x": "player.X",
+												"from-y": "player.Y",
+												"from-angle": "0",
+												"to-x": "Self.Pathfinding.NodeXAt(loopindex(\"initialNode\") + 1)",
+												"to-y": "Self.Pathfinding.NodeYAt(loopindex(\"initialNode\") + 1)"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "stop-loop",
+											"objectClass": "System",
+											"sid": 250329953525209
+										},
+										{
+											"id": "move-to-position",
+											"objectClass": "player",
+											"sid": 497241661693024,
+											"behaviorType": "MoveTo",
+											"parameters": {
+												"x": "Self.Pathfinding.NodeXAt(2)",
+												"y": "Self.Pathfinding.NodeYAt(2)",
+												"mode": "add-waypoint"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 253225670041085,
+											"parameters": {
+												"variable": "node",
+												"value": "loopindex(\"initialNode\")"
+											}
+										}
+									],
+									"sid": 290545295570315
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for",
+											"objectClass": "System",
+											"sid": 474414231236025,
+											"parameters": {
+												"name": "\"remainingNodes\"",
+												"start-index": "loopindex(\"initialNode\")",
+												"end-index": "player.Pathfinding.NodeCount"
+											}
+										},
+										{
+											"id": "has-los-between-positions",
+											"objectClass": "player",
+											"sid": 222899345336339,
+											"behaviorType": "LineOfSight",
+											"parameters": {
+												"from-x": "Self.Pathfinding.NodeXAt(node)",
+												"from-y": "Self.Pathfinding.NodeYAt(node)",
+												"from-angle": "0",
+												"to-x": "Self.Pathfinding.NodeXAt(loopindex(\"remainingNodes\"))",
+												"to-y": "Self.Pathfinding.NodeYAt(loopindex(\"remainingNodes\"))"
+											}
+										},
+										{
+											"id": "has-los-between-positions",
+											"objectClass": "player",
+											"sid": 131402452046259,
+											"behaviorType": "LineOfSight",
+											"parameters": {
+												"from-x": "Self.Pathfinding.NodeXAt(node)",
+												"from-y": "Self.Pathfinding.NodeYAt(node)",
+												"from-angle": "0",
+												"to-x": "Self.Pathfinding.NodeXAt(loopindex(\"remainingNodes\") + 1)",
+												"to-y": "Self.Pathfinding.NodeYAt(loopindex(\"remainingNodes\") + 1)"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "move-to-position",
+											"objectClass": "player",
+											"sid": 327839187309601,
+											"behaviorType": "MoveTo",
+											"parameters": {
+												"x": "Self.Pathfinding.NodeXAt(loopindex(\"remainingNodes\"))",
+												"y": "Self.Pathfinding.NodeYAt(loopindex(\"remainingNodes\"))",
+												"mode": "add-waypoint"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 253139154642717,
+											"parameters": {
+												"variable": "node",
+												"value": "loopindex(\"remainingNodes\")"
+											}
+										}
+									],
+									"sid": 307813661558026
 								}
 							]
 						}
@@ -7769,14 +7959,14 @@
 		},
 		{
 			"eventType": "group",
-			"disabled": false,
+			"disabled": true,
 			"title": "enemies",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
 				{
 					"eventType": "group",
-					"disabled": false,
+					"disabled": true,
 					"title": "enemy generation",
 					"description": "",
 					"isActiveOnStart": true,
@@ -7814,6 +8004,7 @@
 								}
 							],
 							"sid": 578521946003753,
+							"disabled": true,
 							"children": [
 								{
 									"eventType": "block",
@@ -8072,6 +8263,7 @@
 										}
 									],
 									"sid": 531489532420119,
+									"disabled": true,
 									"children": [
 										{
 											"eventType": "block",
@@ -8102,7 +8294,8 @@
 													}
 												}
 											],
-											"sid": 568661094238507
+											"sid": 568661094238507,
+											"disabled": true
 										}
 									]
 								}
@@ -8113,7 +8306,7 @@
 				},
 				{
 					"eventType": "group",
-					"disabled": false,
+					"disabled": true,
 					"title": "behaviors",
 					"description": "",
 					"isActiveOnStart": true,
@@ -8129,6 +8322,7 @@
 							],
 							"actions": [],
 							"sid": 535964514175137,
+							"disabled": true,
 							"children": [
 								{
 									"eventType": "block",
@@ -8155,7 +8349,8 @@
 											}
 										}
 									],
-									"sid": 287309572114379
+									"sid": 287309572114379,
+									"disabled": true
 								},
 								{
 									"eventType": "block",
@@ -8171,6 +8366,7 @@
 									],
 									"actions": [],
 									"sid": 962559651820205,
+									"disabled": true,
 									"children": [
 										{
 											"eventType": "block",
@@ -8202,7 +8398,8 @@
 													}
 												}
 											],
-											"sid": 974862513062633
+											"sid": 974862513062633,
+											"disabled": true
 										},
 										{
 											"eventType": "block",
@@ -8234,6 +8431,7 @@
 												}
 											],
 											"sid": 209856504349155,
+											"disabled": true,
 											"children": [
 												{
 													"eventType": "block",
@@ -8261,7 +8459,8 @@
 															}
 														}
 													],
-													"sid": 745043361893384
+													"sid": 745043361893384,
+													"disabled": true
 												}
 											]
 										},
@@ -8296,6 +8495,7 @@
 												}
 											],
 											"sid": 671059136543965,
+											"disabled": true,
 											"children": [
 												{
 													"eventType": "block",
@@ -8323,7 +8523,8 @@
 															}
 														}
 													],
-													"sid": 539797597590782
+													"sid": 539797597590782,
+													"disabled": true
 												}
 											]
 										},
@@ -8358,7 +8559,8 @@
 													}
 												}
 											],
-											"sid": 902789578472791
+											"sid": 902789578472791,
+											"disabled": true
 										},
 										{
 											"eventType": "block",
@@ -8393,6 +8595,7 @@
 												}
 											],
 											"sid": 741381162689212,
+											"disabled": true,
 											"children": [
 												{
 													"eventType": "block",
@@ -8424,7 +8627,8 @@
 															}
 														}
 													],
-													"sid": 236101123603923
+													"sid": 236101123603923,
+													"disabled": true
 												},
 												{
 													"eventType": "block",
@@ -8454,7 +8658,8 @@
 															}
 														}
 													],
-													"sid": 885621592278733
+													"sid": 885621592278733,
+													"disabled": true
 												}
 											]
 										},
@@ -8483,6 +8688,7 @@
 												}
 											],
 											"sid": 727179496053531,
+											"disabled": true,
 											"children": [
 												{
 													"eventType": "block",
@@ -8522,6 +8728,7 @@
 														}
 													],
 													"sid": 307613189276596,
+													"disabled": true,
 													"children": [
 														{
 															"eventType": "block",
@@ -8554,7 +8761,8 @@
 																	}
 																}
 															],
-															"sid": 714303469510522
+															"sid": 714303469510522,
+															"disabled": true
 														}
 													]
 												},
@@ -8589,7 +8797,8 @@
 															}
 														}
 													],
-													"sid": 458070132214565
+													"sid": 458070132214565,
+													"disabled": true
 												},
 												{
 													"eventType": "block",
@@ -8624,7 +8833,8 @@
 															}
 														}
 													],
-													"sid": 283697356536894
+													"sid": 283697356536894,
+													"disabled": true
 												}
 											]
 										},
@@ -8653,7 +8863,8 @@
 													}
 												}
 											],
-											"sid": 518082064263967
+											"sid": 518082064263967,
+											"disabled": true
 										},
 										{
 											"eventType": "block",
@@ -8682,7 +8893,8 @@
 													}
 												}
 											],
-											"sid": 865565703473101
+											"sid": 865565703473101,
+											"disabled": true
 										},
 										{
 											"eventType": "block",
@@ -8713,7 +8925,8 @@
 													}
 												}
 											],
-											"sid": 302283878491009
+											"sid": 302283878491009,
+											"disabled": true
 										}
 									]
 								},
@@ -8780,7 +8993,8 @@
 											}
 										}
 									],
-									"sid": 527839902763390
+									"sid": 527839902763390,
+									"disabled": true
 								},
 								{
 									"eventType": "block",
@@ -8825,6 +9039,7 @@
 										}
 									],
 									"sid": 499287131642308,
+									"disabled": true,
 									"children": [
 										{
 											"eventType": "block",
@@ -8850,7 +9065,8 @@
 													"sid": 568088771165848
 												}
 											],
-											"sid": 605826166563561
+											"sid": 605826166563561,
+											"disabled": true
 										},
 										{
 											"eventType": "block",
@@ -8885,7 +9101,8 @@
 													"sid": 296899673207850
 												}
 											],
-											"sid": 866043211158292
+											"sid": 866043211158292,
+											"disabled": true
 										}
 									]
 								}
@@ -8926,7 +9143,8 @@
 							}
 						}
 					],
-					"sid": 999235579307264
+					"sid": 999235579307264,
+					"disabled": true
 				}
 			],
 			"sid": 698161644159610

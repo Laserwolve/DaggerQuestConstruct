@@ -537,7 +537,7 @@
 										"deceleration": 0,
 										"rotate-speed": 0,
 										"set-angle": false,
-										"stop-on-solids": true,
+										"stop-on-solids": false,
 										"enabled": true
 									}
 								},
@@ -553,8 +553,30 @@
 								},
 								"Solid": {
 									"properties": {
-										"enabled": true,
+										"enabled": false,
 										"tags": ""
+									}
+								},
+								"Pathfinding": {
+									"properties": {
+										"cell-size": 10,
+										"cell-border": 40,
+										"obstacles": "solids",
+										"max-speed": 200,
+										"acceleration": 1000,
+										"deceleration": 2000,
+										"rotate-speed": 135,
+										"rotate-object": true,
+										"diagonals": true,
+										"enabled": true
+									}
+								},
+								"LineOfSight": {
+									"properties": {
+										"obstacles": "solids",
+										"range": 10000,
+										"cone-of-view": 360,
+										"use-collision-cells": true
 									}
 								}
 							},
@@ -22658,18 +22680,16 @@
 					}
 				},
 				{
-					"type": "fenceForTesting",
+					"type": "leSolid",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "static0",
+						"initial-animation": "Animation 1",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
 					},
 					"uid": 3,
-					"instanceVariables": {
-						"yValue": 0
-					},
+					"instanceVariables": {},
 					"behaviors": {
 						"Solid": {
 							"properties": {
@@ -22679,10 +22699,10 @@
 						}
 					},
 					"world": {
-						"x": 6134,
-						"y": 7503,
-						"width": 29,
-						"height": 372,
+						"x": 5856,
+						"y": 7488,
+						"width": 250,
+						"height": 250,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
