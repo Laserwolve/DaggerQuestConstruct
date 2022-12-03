@@ -2499,56 +2499,93 @@
 									"behaviorType": "Pathfinding"
 								}
 							],
-							"actions": [],
-							"sid": 719229297894818,
-							"children": [
+							"actions": [
 								{
-									"eventType": "variable",
-									"name": "node",
+									"callFunction": "walkTrimmedPath",
+									"sid": 274788768553387,
+									"parameters": [
+										"player.X",
+										"player.Y",
+										"0"
+									]
+								}
+							],
+							"sid": 719229297894818
+						},
+						{
+							"functionName": "walkTrimmedPath",
+							"functionDescription": "",
+							"functionCategory": "movement",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "startX",
 									"type": "number",
 									"initialValue": "0",
 									"comment": "",
-									"isStatic": true,
-									"isConstant": false,
-									"sid": 309335636572904
+									"sid": 308269960108728
 								},
+								{
+									"name": "startY",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"sid": 493563907571888
+								},
+								{
+									"name": "nodeToStartLoopingFrom",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"sid": 375062781281279
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 906670714064324,
+									"breakpoint": true,
+									"parameters": {
+										"name": "\"\"",
+										"start-index": "nodeToStartLoopingFrom",
+										"end-index": "player.Pathfinding.NodeCount"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 703618283552366,
+							"children": [
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "for",
-											"objectClass": "System",
-											"sid": 945884758142405,
+											"id": "has-los-between-positions",
+											"objectClass": "player",
+											"sid": 606545940406159,
+											"behaviorType": "LineOfSight",
 											"parameters": {
-												"name": "\"initialNode\"",
-												"start-index": "0",
-												"end-index": "player.Pathfinding.NodeCount"
+												"from-x": "startX",
+												"from-y": "startY",
+												"from-angle": "0",
+												"to-x": "Self.Pathfinding.NodeXAt(loopindex)",
+												"to-y": "Self.Pathfinding.NodeYAt(loopindex)"
 											}
 										},
 										{
 											"id": "has-los-between-positions",
 											"objectClass": "player",
-											"sid": 607663896328458,
+											"sid": 407222060034035,
 											"behaviorType": "LineOfSight",
 											"parameters": {
-												"from-x": "player.X",
-												"from-y": "player.Y",
+												"from-x": "startX",
+												"from-y": "startY",
 												"from-angle": "0",
-												"to-x": "Self.Pathfinding.NodeXAt(loopindex(\"initialNode\"))",
-												"to-y": "Self.Pathfinding.NodeYAt(loopindex(\"initialNode\"))"
-											}
-										},
-										{
-											"id": "has-los-between-positions",
-											"objectClass": "player",
-											"sid": 514176807643669,
-											"behaviorType": "LineOfSight",
-											"parameters": {
-												"from-x": "player.X",
-												"from-y": "player.Y",
-												"from-angle": "0",
-												"to-x": "Self.Pathfinding.NodeXAt(loopindex(\"initialNode\") + 1)",
-												"to-y": "Self.Pathfinding.NodeYAt(loopindex(\"initialNode\") + 1)"
+												"to-x": "Self.Pathfinding.NodeXAt(loopindex + 1)",
+												"to-y": "Self.Pathfinding.NodeYAt(loopindex + 1)"
 											},
 											"isInverted": true
 										}
@@ -2557,97 +2594,93 @@
 										{
 											"id": "stop-loop",
 											"objectClass": "System",
-											"sid": 250329953525209
+											"sid": 977325159666236
 										},
 										{
 											"id": "move-to-position",
 											"objectClass": "player",
-											"sid": 497241661693024,
+											"sid": 911236443312317,
 											"behaviorType": "MoveTo",
 											"parameters": {
-												"x": "Self.Pathfinding.NodeXAt(2)",
-												"y": "Self.Pathfinding.NodeYAt(2)",
+												"x": "player.Pathfinding.NodeXAt(loopindex)",
+												"y": "player.Pathfinding.NodeYAt(loopindex)",
 												"mode": "add-waypoint"
 											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 253225670041085,
-											"parameters": {
-												"variable": "node",
-												"value": "loopindex(\"initialNode\")"
-											}
 										}
 									],
-									"sid": 290545295570315
-								},
-								{
-									"eventType": "block",
-									"conditions": [
+									"sid": 779693259854253,
+									"children": [
 										{
-											"id": "for",
-											"objectClass": "System",
-											"sid": 474414231236025,
-											"parameters": {
-												"name": "\"remainingNodes\"",
-												"start-index": "loopindex(\"initialNode\")",
-												"end-index": "player.Pathfinding.NodeCount"
-											}
-										},
-										{
-											"id": "has-los-between-positions",
-											"objectClass": "player",
-											"sid": 222899345336339,
-											"behaviorType": "LineOfSight",
-											"parameters": {
-												"from-x": "Self.Pathfinding.NodeXAt(node)",
-												"from-y": "Self.Pathfinding.NodeYAt(node)",
-												"from-angle": "0",
-												"to-x": "Self.Pathfinding.NodeXAt(loopindex(\"remainingNodes\"))",
-												"to-y": "Self.Pathfinding.NodeYAt(loopindex(\"remainingNodes\"))"
-											}
-										},
-										{
-											"id": "has-los-between-positions",
-											"objectClass": "player",
-											"sid": 131402452046259,
-											"behaviorType": "LineOfSight",
-											"parameters": {
-												"from-x": "Self.Pathfinding.NodeXAt(node)",
-												"from-y": "Self.Pathfinding.NodeYAt(node)",
-												"from-angle": "0",
-												"to-x": "Self.Pathfinding.NodeXAt(loopindex(\"remainingNodes\") + 1)",
-												"to-y": "Self.Pathfinding.NodeYAt(loopindex(\"remainingNodes\") + 1)"
-											},
-											"isInverted": true
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "evaluate-expression",
+													"objectClass": "System",
+													"sid": 222412230798881,
+													"parameters": {
+														"value": "(player.MoveTo.WaypointXAt(player.MoveTo.WaypointCount - 1) <> player.Pathfinding.NodeXAt(player.Pathfinding.NodeCount - 1)) & (player.MoveTo.WaypointYAt(player.MoveTo.WaypointCount - 1) <> player.Pathfinding.NodeYAt(player.Pathfinding.NodeCount - 1))"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "walkTrimmedPath",
+													"sid": 957803616813391,
+													"parameters": [
+														"player.Pathfinding.NodeXAt(loopindex)",
+														"player.Pathfinding.NodeYAt(loopindex)",
+														"loopindex"
+													]
+												},
+												{
+													"type": "comment",
+													"text": "if that path bends once, or three times, it works... but twice, it doesn't"
+												}
+											],
+											"sid": 224110478525511
 										}
-									],
-									"actions": [
-										{
-											"id": "move-to-position",
-											"objectClass": "player",
-											"sid": 327839187309601,
-											"behaviorType": "MoveTo",
-											"parameters": {
-												"x": "Self.Pathfinding.NodeXAt(loopindex(\"remainingNodes\"))",
-												"y": "Self.Pathfinding.NodeYAt(loopindex(\"remainingNodes\"))",
-												"mode": "add-waypoint"
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 253139154642717,
-											"parameters": {
-												"variable": "node",
-												"value": "loopindex(\"remainingNodes\")"
-											}
-										}
-									],
-									"sid": 307813661558026
+									]
 								}
 							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "keyboard",
+									"sid": 985351329579634,
+									"parameters": {
+										"key": 68
+									}
+								},
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 299048248553742,
+									"parameters": {
+										"name": "\"\"",
+										"start-index": "0",
+										"end-index": "player.MoveTo.WaypointCount"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 177490995841820,
+									"parameters": {
+										"object-to-create": "barrel2",
+										"layer": "\"main\"",
+										"x": "player.MoveTo.WaypointXAt(loopindex)",
+										"y": "player.MoveTo.WaypointYAt(loopindex)",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								}
+							],
+							"sid": 569420028954615
 						}
 					],
 					"sid": 638152604065361
