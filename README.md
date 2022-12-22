@@ -1,3 +1,5 @@
+DaggerQuest in Construct 3 is no longer in development due to engine limitations.
+
 ### *The first 2D ARPG in over 20 years...*
 
 ![DaggerQuest logo](/logoForGitHub.png)
